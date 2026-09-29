@@ -1,0 +1,4 @@
+---
+import { faqs } from '../data/content';
+---
+<section class="faq section-wrap" id="faq" aria-labelledby="faq-title"><div><p class="eyebrow">SEBELUM MEMILIH</p><h2 id="faq-title">Pertanyaan<br /><em>Umum.</em></h2><p>Hal kecil yang mungkin<br />ingin kamu tahu.</p></div><div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></section>

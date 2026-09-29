@@ -1,0 +1,19 @@
+---
+import { products } from '../data/content';
+import Icon from './Icon.astro';
+---
+<section class="products section-wrap" id="racikan" aria-labelledby="products-title">
+  <div class="section-heading"><div><p class="eyebrow">PILIHAN RASA</p><h2 id="products-title">Lima Racikan Enten</h2><p>Klik racikan untuk menemukan ceritanya.</p></div><p class="eyebrow side-note">RASA TRADISI<br />DALAM SETIAP HARI</p></div>
+  <div class="product-list">
+    {products.map((product, index) => <article class:list={['product-card', { 'is-open': index === 0 }]} style={`--card-color:${product.color}`}>
+      <h3 class="product-heading"><button class="product-toggle" aria-label={product.name} aria-expanded={index === 0 ? 'true' : 'false'} aria-controls={`detail-${product.id}`} id={`toggle-${product.id}`}><span class="product-number">0{index + 1}</span><span class="collapsed-title">{product.name}</span><span class="toggle-symbol"><span class="plus"><Icon name="plus" /></span><span class="minus"><Icon name="minus" /></span></span></button></h3>
+      <img class="product-photo" src={product.image} alt={`Visual konsep AI botol ${product.name}; label belum final`} width="1122" height="1402" loading="lazy" />
+      <div class="product-detail" id={`detail-${product.id}`} role="region" aria-labelledby={`toggle-${product.id}`} hidden={index !== 0}>
+        <p class="eyebrow">RACIKAN 0{index + 1}</p><h3>{product.name}</h3><p class="flavor">{product.note}</p><p class="description">{product.description}</p>
+        <dl><div><dt>Komposisi</dt><dd>Menunggu konfirmasi Enten.</dd></div><div><dt>Ukuran & harga</dt><dd>Tanyakan info terbaru.</dd></div></dl>
+        <a class="button burgundy order-variant" href="#cara-pesan" data-product={product.name}>Pesan varian ini <Icon /></a>
+      </div>
+    </article>)}
+  </div>
+  <p class="asset-disclaimer">Visual botol dibuat dengan AI. Detail label, ukuran, dan deskripsi rasa masih berupa draft, bukan spesifikasi resmi.</p>
+</section>

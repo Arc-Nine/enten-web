@@ -1,0 +1,8 @@
+---
+import arrow from '@phosphor-icons/core/assets/regular/arrow-right.svg?raw';
+import plus from '@phosphor-icons/core/assets/regular/plus.svg?raw';
+import minus from '@phosphor-icons/core/assets/regular/minus.svg?raw';
+const { name = 'arrow' } = Astro.props;
+const icons: Record<string, string> = { arrow, plus, minus };
+---
+<span class="icon" aria-hidden="true" set:html={icons[name]} />

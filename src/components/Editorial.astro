@@ -1,0 +1,12 @@
+---
+import { posts } from '../data/content';
+import Icon from './Icon.astro';
+---
+<section class="editorial section-wrap" aria-label="Mengenal dan menikmati Enten">
+  <article class="editorial-card olive"><div><p class="eyebrow">BERAWAL DARI YANG DEKAT</p><h2>Dari bahan<br />ke racikan.</h2><p>Rimpang, rempah, dan cerita rasa Nusantara. Kenali inspirasi di balik pilihanmu.</p><a class="text-link" href="#racikan">Kenali racikan <Icon /></a></div><img src="/images/rempah.webp" alt="Komposisi rempah Indonesia, visual AI" width="1000" height="563" loading="lazy" /></article>
+  <article class="editorial-card sand"><div><p class="eyebrow">RUANG UNTUK MENIKMATI</p><h2>Jeda kecil.<br />Rasa yang dekat.</h2><p>Saat membuka hari atau menutup kesibukan, temukan momenmu sendiri bersama Enten.</p><a class="text-link" href="#faq">Cara menikmati <Icon /></a></div><img src="/images/serving.webp" alt="Inspirasi penyajian jamu dalam gelas, visual AI" width="800" height="1000" loading="lazy" /></article>
+</section>
+<section class="journal section-wrap" id="catatan" aria-labelledby="journal-title">
+  <div class="section-heading"><div><p class="eyebrow">CATATAN ENTEN · CONTOH POSTING</p><h2 id="journal-title">Cerita di sela hari.</h2></div><a class="text-link" href="https://www.instagram.com/enten.herbaldrink/" target="_blank" rel="noopener noreferrer">Temui di Instagram <Icon /></a></div>
+  <div class="post-grid">{posts.map((post, index) => <article class="post-card"><img src={post.image} alt={post.title} width="800" height="600" loading="lazy" /><div class="post-meta"><span>{post.category}</span><span>0{index + 1}</span></div><h3>{post.title}</h3><p>{post.text}</p><details><summary>Lihat contoh caption</summary><p>{post.caption}</p><small>Draft editorial, belum dipublikasikan.</small></details></article>)}</div>
+</section>
