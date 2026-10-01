@@ -29,7 +29,7 @@ export function createOrderMessage(name: string, quantity: number, city: string)
 }
 
 // Business contact explicitly supplied by the owner.
-export const whatsappNumber = '6281316362769';
+export const whatsappNumber = '62aaaaa';
 export function createWhatsAppUrl(message: string): string {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

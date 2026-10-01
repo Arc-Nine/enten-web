@@ -60,3 +60,7 @@ Aset aktif adalah `public/video/hero-scroll.mp4` (10 detik, 30fps, 1280×720, se
 ### Koreksi terbaru: tanpa sticky
 
 Hero kembali bergerak dalam alur halaman biasa. Zoom dianimasikan langsung pada `/images/hero-poster.jpg` berdasarkan jarak scroll (skala 1–1.32). Tidak ada pin/sticky, ruang scroll tambahan, autoplay, video seeking, atau durasi waktu playback. Aset video 10 detik disimpan sebagai versi sebelumnya, tidak dimuat oleh homepage. Tombol hanya membekukan zoom, tidak menahan scroll halaman.
+
+## Pemesanan WhatsApp — 2026-10-01
+
+Nomor tujuan dikonfirmasi pengguna: +62 aaaaaa (`aaaaaaa``). Form menyiapkan pratinjau dan tautan WhatsApp berisi varian, jumlah, dan kota. Pengunjung harus menekan kirim sendiri di WhatsApp; website tidak mengirim otomatis atau memproses pembayaran. Instagram hanya untuk sosial. Nomor dan pembentuk URL berada di `src/data/content.ts`. Pernyataan lama bahwa kanal resmi belum terhubung sudah digantikan revisi ini.
