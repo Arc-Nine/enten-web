@@ -11,7 +11,7 @@ export const products: Product[] = [
 ];
 export const faqs = [
   ['Apa saja pilihan racikan Enten?', 'Ada lima pilihan: Kunyit Asem, Beras Kencur, Pokak Jahe, Mpon Mpon, dan Lemon Jahe. Buka kartu racikan untuk menjelajahi masing-masing varian.'],
-  ['Bagaimana cara memesan?', 'Pilih racikan, tentukan jumlah, lalu siapkan pesan melalui formulir di atas. Pada versi demo ini, pesanan belum dikirim. Kamu dapat menyalin pesan dan menghubungi akun Instagram Enten untuk menanyakan kanal pemesanan resmi.'],
+  ['Bagaimana cara memesan?', 'Pilih racikan, tentukan jumlah, lalu siapkan pesan melalui formulir di atas. Klik Lanjut ke WhatsApp untuk membuka percakapan dengan Enten. Periksa pesan lalu kirim sendiri di WhatsApp. Harga, stok, dan pengiriman dikonfirmasi bersama tim Enten.'],
   ['Berapa harga dan ukuran botolnya?', 'Harga dan ukuran resmi sedang menunggu konfirmasi tim Enten. Angka pada gambar botol AI bukan acuan pembelian. Tanyakan daftar produk terbaru sebelum memesan.'],
   ['Bagaimana penyimpanan dan masa simpannya?', 'Ikuti petunjuk pada kemasan asli dan konfirmasikan kepada tim Enten. Kami belum menampilkan suhu penyimpanan atau masa simpan karena informasinya perlu diverifikasi.'],
   ['Apakah tersedia pengiriman ke daerah saya?', 'Ketersediaan, area layanan, jadwal, dan ongkir perlu dikonfirmasi sebelum pemesanan. Sebutkan kota tujuan saat menghubungi Enten.'],
@@ -26,4 +26,10 @@ export function createOrderMessage(name: string, quantity: number, city: string)
   if (!products.some(p => p.name === name)) throw new Error('Pilih racikan yang tersedia.');
   if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) throw new Error('Jumlah harus 1–99 botol.');
   return `Halo Enten, saya ingin menanyakan pesanan:\nRacikan: ${name}\nJumlah: ${quantity} botol\nKota tujuan: ${city.trim() || 'Belum diisi'}\nMohon info harga, ukuran, ketersediaan, ongkir, dan cara pembayaran. Terima kasih.`;
+}
+
+// Business contact explicitly supplied by the owner.
+export const whatsappNumber = '6281316362769';
+export function createWhatsAppUrl(message: string): string {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

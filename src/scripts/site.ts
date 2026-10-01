@@ -1,5 +1,5 @@
 import './hero-scroll';
-import { createOrderMessage } from '../data/content';
+import { createOrderMessage, createWhatsAppUrl } from '../data/content';
 
 const toggles = [...document.querySelectorAll<HTMLButtonElement>('.product-toggle')];
 toggles.forEach(toggle => toggle.addEventListener('click', () => {
@@ -39,13 +39,16 @@ form?.addEventListener('submit', event => {
   try {
     const message = createOrderMessage(String(data.get('product')), Number(data.get('quantity')), String(data.get('city') ?? ''));
     const area = document.querySelector<HTMLTextAreaElement>('#order-message');
+    const whatsappLink = document.querySelector<HTMLAnchorElement>('#whatsapp-order');
+    if (whatsappLink) whatsappLink.href = createWhatsAppUrl(message);
     if (area) area.value = message; if (result) result.hidden = false;
-    if (status) status.textContent = 'Pesan siap. Belum dikirim ke Enten.';
+    if (status) status.textContent = 'Pesan siap. Lanjut ke WhatsApp, lalu periksa dan kirim pesanmu.';
   } catch (error) { if (status) status.textContent = error instanceof Error ? error.message : 'Periksa pilihanmu.'; }
 });
 document.querySelector('#copy-message')?.addEventListener('click', async () => {
   const area = document.querySelector<HTMLTextAreaElement>('#order-message'); if (!area) return;
-  try { await navigator.clipboard.writeText(area.value); if (status) status.textContent = 'Pesan disalin. Buka Instagram Enten untuk menghubungi tim.'; }
+  try { await navigator.clipboard.writeText(area.value); if (status) status.textContent = 'Pesan disalin. Lanjut ke WhatsApp untuk menghubungi tim.'; }
   catch { area.focus(); area.select(); if (status) status.textContent = 'Salin otomatis tidak tersedia. Teks sudah dipilih; salin secara manual.'; }
 });
+
 
