@@ -6,7 +6,7 @@ Website konsep lokal: Astro, TypeScript, CSS native. Tidak ada backend, pelacaka
 
 ```powershell
 $env:ASTRO_TELEMETRY_DISABLED='1'
-npm ci --force
+npm ci
 npm run dev -- --host 127.0.0.1 --port 4173
 ```
 
@@ -18,7 +18,7 @@ npm test
 npm run build
 ```
 
-Tidak ada script lint; Astro check memeriksa tipe dan komponen. Lockfile menyimpan dependency terpilih. Astro 7.3.5 memakai compiler WebAssembly resmi karena compiler native diblokir Application Control pada host Windows ini. Flag instalasi `--force` diperlukan karena paket WASM mencantumkan CPU `wasm32` walaupun dijalankan lewat Node pada x64; tidak ada pengaturan keamanan Windows atau verifikasi TLS yang dilonggarkan. Wrapper CLI menonaktifkan telemetry dan memilih WASM. Astro 6 sempat dicoba, lalu ditinggalkan karena audit keamanan.
+Tidak ada script lint; Astro check memeriksa tipe dan komponen. Lockfile menyimpan dependency terpilih. Script dev/check/build/preview menggunakan CLI Astro standar sehingga tidak bergantung pada wrapper lokal di tools/ yang tidak masuk Git. Biarkan Astro memilih compiler sesuai platform melalui optionalDependencies; jangan memasang binding wasm32 sebagai dependency wajib atau menggunakan --force. Jika Application Control Windows memblokir compiler native, jalankan verifikasi di lingkungan yang diizinkan (misalnya Linux/CI); jangan melemahkan kebijakan keamanan.
 
 ## Konten dan komponen
 

@@ -4,15 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node tools/astro-cli.mjs dev",
-    "check": "node tools/astro-cli.mjs check",
-    "build": "node tools/astro-cli.mjs build",
-    "preview": "node tools/astro-cli.mjs preview",
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview",
     "test": "node --experimental-strip-types --test tests/*.test.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/compiler-binding-wasm32-wasi": "0.5.1",
     "@fontsource/cormorant-garamond": "^5.3.0",
     "@fontsource/dm-sans": "^5.3.0",
     "@phosphor-icons/core": "^2.1.1",
