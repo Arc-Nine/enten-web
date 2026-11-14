@@ -5,6 +5,9 @@
    ============================================================ */
 @import 'tailwindcss';
 
+/* Layar pendek (laptop 720p, landscape): hero memakai panorama penuh. */
+@custom-variant short-screen (@media (max-height: 767px) and (min-width: 768px));
+
 @theme {
   /* --- Palet mengikuti theme referensi enten-web-neon.vercel.app ---
      olive = permukaan gelap, burgundy/terracotta/mustard = aksen,
@@ -166,7 +169,7 @@
 
   /* ---------- Tombol ---------- */
   .btn-lux {
-    @apply relative inline-flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-[0.8rem] font-semibold tracking-[0.16em] uppercase transition-transform duration-300;
+    @apply relative inline-flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-[0.8rem] font-semibold tracking-[0.16em] whitespace-nowrap uppercase transition-transform duration-300;
     transition-timing-function: var(--ease-lux);
     will-change: transform;
   }

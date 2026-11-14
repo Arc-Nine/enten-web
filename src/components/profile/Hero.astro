@@ -4,7 +4,7 @@ import { about, tagline } from '../../data/profile';
 <section
   id="beranda"
   data-header-theme="dark"
-  class="grain relative flex min-h-dvh flex-col justify-between overflow-hidden bg-forest-950 pt-24 pb-8 text-cream-100 md:pt-32 md:pb-10"
+  class="grain relative flex min-h-dvh flex-col justify-between gap-y-2 overflow-hidden bg-forest-950 pt-24 pb-8 text-cream-100 md:pt-[5rem] md:pb-5 short-screen:pt-[4rem] short-screen:pb-2"
 >
   <!-- Lapisan ambient: gradasi hutan + cahaya turmeric -->
   <div
@@ -53,16 +53,16 @@ import { about, tagline } from '../../data/profile';
   <div class="relative z-10 mx-auto w-full max-w-[86rem] px-5 md:px-10">
     <p class="hero-meta eyebrow text-turmeric-300">Company Profile · Kota Bekasi</p>
 
-    <h1 class="hero-title mt-7 font-display text-[clamp(2.9rem,8.2vw,7.2rem)] leading-[0.98] font-medium tracking-[-0.01em]">
+    <h1 class="hero-title mt-4 font-display text-[clamp(2.5rem,4.8vw,4.4rem)] leading-[1.02] font-medium tracking-[-0.01em] md:mt-5 short-screen:mt-2 short-screen:text-[clamp(2rem,3.2vw,2.7rem)]">
       <span class="mask-line"><span>Perusahaan di balik</span></span>
       <span class="mask-line"><span class="text-turmeric-300 italic">racikan Enten.</span></span>
     </h1>
 
-    <div class="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-      <p class="hero-meta max-w-xl text-base leading-relaxed text-cream-100/75 md:text-lg">
+    <div class="mt-5 flex flex-col gap-5 md:mt-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10 short-screen:mt-2 short-screen:gap-2">
+      <p class="hero-meta max-w-xl text-base leading-relaxed text-cream-100/75 md:text-[1.05rem] short-screen:max-w-lg short-screen:text-[0.9rem] short-screen:leading-snug">
         {about.lead}
       </p>
-      <div class="hero-meta flex flex-wrap items-center gap-4">
+      <div class="hero-meta flex flex-wrap items-center gap-3 md:gap-4">
         <a class="btn-lux btn-primary" data-magnetic href="#profil">
           <span class="btn-fill" aria-hidden="true"></span>
           Kenali Perusahaan
@@ -75,23 +75,30 @@ import { about, tagline } from '../../data/profile';
     </div>
   </div>
 
-  <!-- Foto panorama produk: lapisan parallax terdepan -->
-  <div class="relative z-10 mx-auto mt-8 w-full max-w-[86rem] px-5 md:mt-16 md:px-10">
-    <figure data-parallax="12" class="hero-meta overflow-hidden rounded-[1.6rem] border border-cream-100/12 will-change-transform">
-      <img
-        src="/images/profile/hero.jpg"
-        alt="Jajaran botol Enten: Kunyit Asem, Beras Kencur, Pokak Jahe, Mpon Mpon, dan Lemon Jahe."
-        width="6000"
-        height="1922"
-        class="h-[20vh] w-full object-cover object-center md:h-[30vh]"
-        loading="eager"
-        fetchpriority="high"
-      />
+  <!-- Foto produk selebar kolom konten. Desktop: bingkai sinematik lebar dengan
+       object-position bawah — bagian atas foto hanya dinding kosong, sehingga
+       kelima botol + tangan selalu utuh pada semua tinggi layar. Mobile: crop
+       art-direction botol+tangan, rasio asli tanpa pemotongan CSS. -->
+  <div class="relative z-10 mx-auto mt-7 w-full max-w-[86rem] px-5 md:mt-8 md:px-10 short-screen:mt-2">
+    <figure data-parallax="5" class="hero-meta overflow-hidden rounded-[1.6rem] border border-cream-100/12 will-change-transform">
+      <picture>
+        <source media="(max-width: 767px)" srcset="/images/profile/hero-mobile.webp" width="1200" height="896" />
+        <img
+          src="/images/profile/hero.webp"
+          alt="Tangan memilih botol Pokak Jahe dari jajaran lima varian Enten: Kunyit Asem, Beras Kencur, Pokak Jahe, Mpon Mpon, dan Lemon Jahe."
+          width="2400"
+          height="1112"
+          class="block w-full object-cover object-bottom max-md:h-auto md:h-[clamp(18rem,44vh,30rem)] short-screen:h-[clamp(19rem,50vh,24rem)]"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
     </figure>
-    <div class="hero-meta mt-4 flex items-center justify-between gap-4 text-[0.7rem] tracking-[0.3em] uppercase md:mt-5">
-      <span class="text-cream-100/60">{tagline}</span>
+    <div class="hero-meta mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-[0.7rem] tracking-[0.3em] uppercase md:mt-5 short-screen:mt-2">
+      <span class="text-cream-100/60" translate="no">{tagline}</span>
       <span class="flex items-center gap-3 text-cream-100/60">
-        Gulung untuk menjelajah
+        Scroll untuk menjelajah
         <svg width="14" height="22" viewBox="0 0 14 22" fill="none" aria-hidden="true">
           <path d="M7 1v16m0 0 5-5m-5 5-5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
         </svg>

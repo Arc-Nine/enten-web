@@ -87,7 +87,6 @@ export const events = {
   image: '/images/profile/event-1.jpg',
   imageAlt:
     'Suasana bazar Enten: pengunjung mendatangi booth di tenda, banner logo Enten dengan kode pindai, serta cooler box berisi botol siap jual.',
-  captions: ['Bazar di kantor BKN', 'Bazar Fun Run HARRIS Share The Miles 2026'],
 };
 
 export const specialPackaging = {

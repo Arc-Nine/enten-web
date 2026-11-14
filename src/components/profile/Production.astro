@@ -6,7 +6,7 @@ import { production, events, specialPackaging } from '../../data/profile';
     <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-reveal-group>
       <div>
         <p class="eyebrow text-turmeric-600" data-reveal>Produksi & Kegiatan</p>
-        <h2 class="mt-6 max-w-2xl font-display text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.05] font-medium text-forest-900" data-reveal>
+        <h2 class="mt-6 max-w-2xl text-balance font-display text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.05] font-medium text-forest-900" data-reveal>
           Dapur produksi yang rapi, <span class="italic">panggung yang ramai.</span>
         </h2>
       </div>
@@ -26,43 +26,46 @@ import { production, events, specialPackaging } from '../../data/profile';
     </figure>
 
     <!-- Kegiatan: bazar & pameran + kemasan khusus -->
-    <div class="mt-20 grid gap-10 lg:grid-cols-12">
-      <article class="lg:col-span-7" data-reveal-group>
-        <p class="eyebrow text-turmeric-600" data-reveal>Event yang Pernah Diikuti</p>
-        <p class="mt-6 max-w-xl text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{events.text}</p>
-        <ul class="mt-6 flex flex-wrap gap-3" data-reveal-group>
-          {events.captions.map((c) => (
-            <li class="rounded-full border border-forest-900/15 px-4 py-2 text-[0.78rem] tracking-[0.08em] text-forest-800" data-reveal>
-              {c}
-            </li>
-          ))}
-        </ul>
-        <figure class="mt-8 overflow-hidden rounded-[1.4rem]" data-reveal>
-          <img
-            src={events.image}
-            alt={events.imageAlt}
-            width="1080"
-            height="1080"
-            class="h-[46vh] w-full object-cover md:h-[54vh]"
-            loading="lazy"
-          />
-        </figure>
-      </article>
+    <div class="mt-16 grid gap-x-10 gap-y-12 md:mt-24 lg:grid-cols-[1.282fr_1fr] lg:gap-x-14">
+      <div class="order-1 lg:order-none lg:col-start-1 lg:row-start-1" data-reveal>
+        <h3 class="eyebrow text-turmeric-600">Event yang Pernah Diikuti</h3>
+        <p class="mt-5 max-w-xl text-[0.98rem] leading-[1.85] text-ink-700">{events.text}</p>
+      </div>
 
-      <article class="lg:col-span-5" data-reveal-group>
-        <p class="eyebrow text-turmeric-600" data-reveal>Event Event Khusus</p>
-        <p class="mt-6 text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{specialPackaging.text}</p>
-        <figure class="mt-8 overflow-hidden rounded-[1.4rem]" data-reveal>
-          <img
-            src={specialPackaging.image}
-            alt={specialPackaging.imageAlt}
-            width="2632"
-            height="3374"
-            class="h-[46vh] w-full object-cover md:h-[54vh]"
-            loading="lazy"
-          />
-        </figure>
-      </article>
+      <figure class="order-2 lg:order-none lg:col-start-1 lg:row-start-2" data-reveal>
+        <div class="rounded-[1.5rem] border border-forest-900/10 bg-cream-50 p-2 md:p-3 lg:h-full">
+          <div class="overflow-hidden rounded-[1.1rem] lg:h-full">
+            <img
+              src={events.image}
+              alt={events.imageAlt}
+              width="1080"
+              height="1080"
+              class="aspect-square w-full object-cover transition-transform duration-[1.6s] [transition-timing-function:var(--ease-lux)] hover:scale-[1.03] lg:aspect-auto lg:h-full"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </figure>
+
+      <div class="order-3 lg:order-none lg:col-start-2 lg:row-start-1" data-reveal>
+        <h3 class="eyebrow text-turmeric-600">Event-Event Khusus</h3>
+        <p class="mt-5 text-[0.98rem] leading-[1.85] text-ink-700">{specialPackaging.text}</p>
+      </div>
+
+      <figure class="order-4 lg:order-none lg:col-start-2 lg:row-start-2" data-reveal>
+        <div class="rounded-[1.5rem] border border-forest-900/10 bg-cream-50 p-2 md:p-3 lg:h-full">
+          <div class="overflow-hidden rounded-[1.1rem] lg:h-full">
+            <img
+              src={specialPackaging.image}
+              alt={specialPackaging.imageAlt}
+              width="2632"
+              height="3374"
+              class="aspect-[2632/3374] w-full object-cover transition-transform duration-[1.6s] [transition-timing-function:var(--ease-lux)] hover:scale-[1.03] lg:aspect-auto lg:h-full"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </figure>
     </div>
   </div>
 </section>
