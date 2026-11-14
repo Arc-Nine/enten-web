@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T08:20:00.000Z",
+  "title": "Design System: Sabrang Malsico — Enten",
+  "extensions": {
+    "colorMeta": {
+      "cream": {
+        "role": "neutral",
+        "displayName": "Krim Kertas Beras",
+        "canonical": "#f7ede2",
+        "tonalRamp": [
+          "oklch(15% 0.012 70.2)",
+          "oklch(26% 0.015 70.2)",
+          "oklch(37% 0.017 70.2)",
+          "oklch(48% 0.018 70.2)",
+          "oklch(59% 0.018 70.2)",
+          "oklch(70% 0.016 70.2)",
+          "oklch(82% 0.013 70.2)",
+          "oklch(94% 0.007 70.2)"
+        ]
+      },
+      "burgundy": {
+        "role": "primary",
+        "displayName": "Burgundy Jamu",
+        "canonical": "#6a3537",
+        "tonalRamp": [
+          "oklch(15% 0.049 18.7)",
+          "oklch(26% 0.064 18.7)",
+          "oklch(37% 0.072 18.7)",
+          "oklch(48% 0.075 18.7)",
+          "oklch(59% 0.074 18.7)",
+          "oklch(70% 0.067 18.7)",
+          "oklch(82% 0.054 18.7)",
+          "oklch(94% 0.030 18.7)"
+        ]
+      },
+      "olive": {
+        "role": "secondary",
+        "displayName": "Olive Daun Tua",
+        "canonical": "#605c48",
+        "tonalRamp": [
+          "oklch(15% 0.020 98.0)",
+          "oklch(26% 0.026 98.0)",
+          "oklch(37% 0.030 98.0)",
+          "oklch(48% 0.031 98.0)",
+          "oklch(59% 0.030 98.0)",
+          "oklch(70% 0.028 98.0)",
+          "oklch(82% 0.022 98.0)",
+          "oklch(94% 0.012 98.0)"
+        ]
+      },
+      "terracotta": {
+        "role": "tertiary",
+        "displayName": "Terracotta Tanah Liat",
+        "canonical": "#b06d44",
+        "tonalRamp": [
+          "oklch(15% 0.066 51.2)",
+          "oklch(26% 0.086 51.2)",
+          "oklch(37% 0.098 51.2)",
+          "oklch(48% 0.102 51.2)",
+          "oklch(59% 0.100 51.2)",
+          "oklch(70% 0.091 51.2)",
+          "oklch(82% 0.073 51.2)",
+          "oklch(94% 0.041 51.2)"
+        ]
+      },
+      "mustard": {
+        "role": "tertiary",
+        "displayName": "Mustard Kunyit",
+        "canonical": "#ca984f",
+        "tonalRamp": [
+          "oklch(15% 0.070 74.8)",
+          "oklch(26% 0.091 74.8)",
+          "oklch(37% 0.104 74.8)",
+          "oklch(48% 0.108 74.8)",
+          "oklch(59% 0.106 74.8)",
+          "oklch(70% 0.097 74.8)",
+          "oklch(82% 0.077 74.8)",
+          "oklch(94% 0.043 74.8)"
+        ]
+      },
+      "rose": {
+        "role": "tertiary",
+        "displayName": "Rose Kelopak Kering",
+        "canonical": "#c99f92",
+        "tonalRamp": [
+          "oklch(15% 0.035 37.9)",
+          "oklch(26% 0.045 37.9)",
+          "oklch(37% 0.051 37.9)",
+          "oklch(48% 0.054 37.9)",
+          "oklch(59% 0.052 37.9)",
+          "oklch(70% 0.048 37.9)",
+          "oklch(82% 0.038 37.9)",
+          "oklch(94% 0.021 37.9)"
+        ]
+      },
+      "sand": {
+        "role": "tertiary",
+        "displayName": "Pasir Hangat",
+        "canonical": "#cbb298",
+        "tonalRamp": [
+          "oklch(15% 0.030 68.2)",
+          "oklch(26% 0.039 68.2)",
+          "oklch(37% 0.044 68.2)",
+          "oklch(48% 0.046 68.2)",
+          "oklch(59% 0.045 68.2)",
+          "oklch(70% 0.041 68.2)",
+          "oklch(82% 0.033 68.2)",
+          "oklch(94% 0.018 68.2)"
+        ]
+      },
+      "sage": {
+        "role": "tertiary",
+        "displayName": "Sage Kebun Rempah",
+        "canonical": "#98a47a",
+        "tonalRamp": [
+          "oklch(15% 0.039 120.9)",
+          "oklch(26% 0.051 120.9)",
+          "oklch(37% 0.058 120.9)",
+          "oklch(48% 0.060 120.9)",
+          "oklch(59% 0.059 120.9)",
+          "oklch(70% 0.054 120.9)",
+          "oklch(82% 0.043 120.9)",
+          "oklch(94% 0.024 120.9)"
+        ]
+      },
+      "mist": {
+        "role": "tertiary",
+        "displayName": "Mist Pagi",
+        "canonical": "#b2c6bf",
+        "tonalRamp": [
+          "oklch(15% 0.015 172.7)",
+          "oklch(26% 0.020 172.7)",
+          "oklch(37% 0.023 172.7)",
+          "oklch(48% 0.024 172.7)",
+          "oklch(59% 0.023 172.7)",
+          "oklch(70% 0.021 172.7)",
+          "oklch(82% 0.017 172.7)",
+          "oklch(94% 0.009 172.7)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta Cokelat Tua",
+        "canonical": "#302d25",
+        "tonalRamp": [
+          "oklch(15% 0.009 89.9)",
+          "oklch(26% 0.012 89.9)",
+          "oklch(37% 0.014 89.9)",
+          "oklch(48% 0.015 89.9)",
+          "oklch(59% 0.014 89.9)",
+          "oklch(70% 0.013 89.9)",
+          "oklch(82% 0.010 89.9)",
+          "oklch(94% 0.006 89.9)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Cokelat Redam",
+        "canonical": "#6b6257",
+        "tonalRamp": [
+          "oklch(15% 0.013 72.9)",
+          "oklch(26% 0.017 72.9)",
+          "oklch(37% 0.020 72.9)",
+          "oklch(48% 0.021 72.9)",
+          "oklch(59% 0.020 72.9)",
+          "oklch(70% 0.018 72.9)",
+          "oklch(82% 0.015 72.9)",
+          "oklch(94% 0.008 72.9)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Garis Kapur Hangat",
+        "canonical": "#d7c9b9",
+        "tonalRamp": [
+          "oklch(15% 0.017 71.1)",
+          "oklch(26% 0.023 71.1)",
+          "oklch(37% 0.026 71.1)",
+          "oklch(48% 0.027 71.1)",
+          "oklch(59% 0.026 71.1)",
+          "oklch(70% 0.024 71.1)",
+          "oklch(82% 0.019 71.1)",
+          "oklch(94% 0.011 71.1)"
+        ]
+      },
+      "burgundy-deep": {
+        "role": "primary",
+        "displayName": "Burgundy Dalam",
+        "canonical": "#50282a",
+        "tonalRamp": [
+          "oklch(15% 0.039 17.7)",
+          "oklch(26% 0.050 17.7)",
+          "oklch(37% 0.057 17.7)",
+          "oklch(48% 0.060 17.7)",
+          "oklch(59% 0.058 17.7)",
+          "oklch(70% 0.053 17.7)",
+          "oklch(82% 0.042 17.7)",
+          "oklch(94% 0.024 17.7)"
+        ]
+      },
+      "cream-bright": {
+        "role": "neutral",
+        "displayName": "Krim Cerah",
+        "canonical": "#fff9f2",
+        "tonalRamp": [
+          "oklch(15% 0.007 71.9)",
+          "oklch(26% 0.009 71.9)",
+          "oklch(37% 0.011 71.9)",
+          "oklch(48% 0.011 71.9)",
+          "oklch(59% 0.011 71.9)",
+          "oklch(70% 0.010 71.9)",
+          "oklch(82% 0.008 71.9)",
+          "oklch(94% 0.004 71.9)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Krim Panel Tua",
+        "canonical": "#eee2d4",
+        "tonalRamp": [
+          "oklch(15% 0.015 71.8)",
+          "oklch(26% 0.019 71.8)",
+          "oklch(37% 0.022 71.8)",
+          "oklch(48% 0.023 71.8)",
+          "oklch(59% 0.022 71.8)",
+          "oklch(70% 0.020 71.8)",
+          "oklch(82% 0.016 71.8)",
+          "oklch(94% 0.009 71.8)"
+        ]
+      },
+      "input-line": {
+        "role": "neutral",
+        "displayName": "Garis Input",
+        "canonical": "#bbac9a",
+        "tonalRamp": [
+          "oklch(15% 0.020 72.4)",
+          "oklch(26% 0.026 72.4)",
+          "oklch(37% 0.029 72.4)",
+          "oklch(48% 0.031 72.4)",
+          "oklch(59% 0.030 72.4)",
+          "oklch(70% 0.027 72.4)",
+          "oklch(82% 0.022 72.4)",
+          "oklch(94% 0.012 72.4)"
+        ]
+      },
+      "step-sage": {
+        "role": "neutral",
+        "displayName": "Sage Langkah",
+        "canonical": "#d7ddc8",
+        "tonalRamp": [
+          "oklch(15% 0.019 120.0)",
+          "oklch(26% 0.024 120.0)",
+          "oklch(37% 0.028 120.0)",
+          "oklch(48% 0.029 120.0)",
+          "oklch(59% 0.028 120.0)",
+          "oklch(70% 0.026 120.0)",
+          "oklch(82% 0.021 120.0)",
+          "oklch(94% 0.012 120.0)"
+        ]
+      },
+      "card-kunyit-asem": {
+        "role": "accent",
+        "displayName": "Pastel Kunyit",
+        "canonical": "#ead6ab",
+        "tonalRamp": [
+          "oklch(15% 0.039 86.0)",
+          "oklch(26% 0.051 86.0)",
+          "oklch(37% 0.058 86.0)",
+          "oklch(48% 0.061 86.0)",
+          "oklch(59% 0.059 86.0)",
+          "oklch(70% 0.054 86.0)",
+          "oklch(82% 0.043 86.0)",
+          "oklch(94% 0.024 86.0)"
+        ]
+      },
+      "card-beras-kencur": {
+        "role": "accent",
+        "displayName": "Pastel Beras",
+        "canonical": "#e7d4cc",
+        "tonalRamp": [
+          "oklch(15% 0.015 44.3)",
+          "oklch(26% 0.020 44.3)",
+          "oklch(37% 0.023 44.3)",
+          "oklch(48% 0.024 44.3)",
+          "oklch(59% 0.023 44.3)",
+          "oklch(70% 0.021 44.3)",
+          "oklch(82% 0.017 44.3)",
+          "oklch(94% 0.010 44.3)"
+        ]
+      },
+      "card-pokak-jahe": {
+        "role": "accent",
+        "displayName": "Pastel Pokak",
+        "canonical": "#d9ddca",
+        "tonalRamp": [
+          "oklch(15% 0.017 116.6)",
+          "oklch(26% 0.022 116.6)",
+          "oklch(37% 0.025 116.6)",
+          "oklch(48% 0.026 116.6)",
+          "oklch(59% 0.025 116.6)",
+          "oklch(70% 0.023 116.6)",
+          "oklch(82% 0.018 116.6)",
+          "oklch(94% 0.010 116.6)"
+        ]
+      },
+      "card-mpon-mpon": {
+        "role": "accent",
+        "displayName": "Pastel Mpon",
+        "canonical": "#e6d7c5",
+        "tonalRamp": [
+          "oklch(15% 0.019 72.4)",
+          "oklch(26% 0.025 72.4)",
+          "oklch(37% 0.028 72.4)",
+          "oklch(48% 0.029 72.4)",
+          "oklch(59% 0.029 72.4)",
+          "oklch(70% 0.026 72.4)",
+          "oklch(82% 0.021 72.4)",
+          "oklch(94% 0.012 72.4)"
+        ]
+      },
+      "card-lemon-jahe": {
+        "role": "accent",
+        "displayName": "Pastel Lemon",
+        "canonical": "#d7e2dc",
+        "tonalRamp": [
+          "oklch(15% 0.009 162.4)",
+          "oklch(26% 0.012 162.4)",
+          "oklch(37% 0.014 162.4)",
+          "oklch(48% 0.014 162.4)",
+          "oklch(59% 0.014 162.4)",
+          "oklch(70% 0.013 162.4)",
+          "oklch(82% 0.010 162.4)",
+          "oklch(94% 0.006 162.4)"
+        ]
+      },
+      "card-sari-asem": {
+        "role": "accent",
+        "displayName": "Pastel Asem",
+        "canonical": "#eec39a",
+        "tonalRamp": [
+          "oklch(15% 0.047 65.2)",
+          "oklch(26% 0.061 65.2)",
+          "oklch(37% 0.070 65.2)",
+          "oklch(48% 0.073 65.2)",
+          "oklch(59% 0.072 65.2)",
+          "oklch(70% 0.065 65.2)",
+          "oklch(82% 0.052 65.2)",
+          "oklch(94% 0.029 65.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hanya h1 hero — serif tracking rapat clamp(48px, 6.4vw, 98px), line-height .99."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Kalimat pembuka bagian cerita/tagline, clamp(54px, 5.6vw, 83px), line-height .94."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Judul h2 section, clamp(36px, 3.5vw, 52px)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3 umum 32px; nama produk terbuka clamp(28px, 2.6vw, 40px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraf, DM Sans 15px/1.65."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Salinan pendukung kolom story dan pengantar section, 14px/1.65."
+      },
+      "compact": {
+        "displayName": "Compact",
+        "purpose": "Teks kartu, FAQ, field formulir, dan salinan panel, 13px/1.65."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Lantai teks informatif (12px/1.6) — dl kartu produk, steps, caption padat; tidak ada teks informatif di bawah 12px."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Lantai caption/label sekunder (11px/1.6) — chips, disclaimer, footer small, motion-toggle."
+      },
+      "label": {
+        "displayName": "Label / Eyebrow",
+        "purpose": "Penanda section UPPERCASE 10px, tracking .22em (.28em di hero). Pengecualian dekoratif brand: sub-wordmark 8px (mobile 7px), footnote hero dan scroll-hint 10px (mobile 9px)."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Label semua tombol dan CTA, DM Sans 13px/500."
+      }
+    },
+    "shadows": [
+      {
+        "name": "nav-dropdown",
+        "value": "0 8px 15px #302d2510",
+        "purpose": "Satu-satunya box-shadow di sistem: dropdown navigasi mobile."
+      },
+      {
+        "name": "hero-text",
+        "value": "0 1px 12px #302d251f",
+        "purpose": "Text-shadow h1 hero di atas ilustrasi — keterbacaan, bukan elevasi permukaan."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-card",
+        "value": "cubic-bezier(.22,.68,0,1), 0.65s",
+        "purpose": "Kurva morph flex accordion produk desktop (1 ↔ 4.9)."
+      },
+      {
+        "name": "accordion-mobile",
+        "value": "height 0.5s ease",
+        "purpose": "Accordion vertikal mobile 88px → 485px."
+      },
+      {
+        "name": "detail-in",
+        "value": "0.4s ease 0.12s both",
+        "purpose": "Fade-rise panel detail produk (opacity 0→1, translateY 10px→0)."
+      },
+      {
+        "name": "transition-base",
+        "value": "0.2s ease",
+        "purpose": "Transisi background/transform tombol dan border-color kontak."
+      },
+      {
+        "name": "hover-lift",
+        "value": "translateY(-2px)",
+        "purpose": "Umpan balik hover semua tombol — lift, bukan shadow."
+      },
+      {
+        "name": "teaser-zoom",
+        "value": "transform 0.5s ease → scale(1.05)",
+        "purpose": "Zoom gambar teaser-card saat hover."
+      },
+      {
+        "name": "hero-zoom",
+        "value": "scale(1 → 1.32) linked to scroll",
+        "purpose": "Zoom ilustrasi hero terhubung guliran, transform-origin 30% 48%; mati pada prefers-reduced-motion dan lewat tombol \"Nonaktifkan gerak\"."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "ultrawide",
+        "value": "1600px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA utama di atas kanvas krim — pill burgundy dengan ikon panah; hover mendalami latar dan mengangkat 2px.",
+      "html": "<button class=\"ds-btn-primary\">Pesan Sekarang <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"/></svg></button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:24px;border:1px solid transparent;border-radius:40px;padding:13px 25px;background:var(--burgundy,#6a3537);color:var(--cream,#f7ede2);font:500 13px/1.5 var(--sans, 'DM Sans', Arial, sans-serif);cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s}.ds-btn-primary:hover{background:#50282a;transform:translateY(-2px)}.ds-btn-primary:focus-visible{outline:3px solid var(--terracotta,#b06d44);outline-offset:5px}.ds-btn-primary svg{width:20px;height:20px;fill:currentColor;flex-shrink:0}"
+    },
+    {
+      "name": "Inverse Button (dark band)",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "CTA di atas band gelap (hero olive) — pill krim; ditampilkan di atas konteks olive aslinya.",
+      "html": "<div class=\"ds-band\"><button class=\"ds-btn-inverse\">Jelajahi Racikan <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"/></svg></button></div>",
+      "css": ".ds-band{background:var(--olive,#605c48);padding:28px;border-radius:13px;display:flex}.ds-btn-inverse{display:inline-flex;align-items:center;justify-content:center;gap:24px;border:1px solid transparent;border-radius:40px;padding:13px 25px;background:var(--cream,#f7ede2);color:var(--burgundy,#6a3537);font:500 13px/1.5 var(--sans, 'DM Sans', Arial, sans-serif);cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s}.ds-btn-inverse:hover{background:#fff9f2;transform:translateY(-2px)}.ds-btn-inverse:focus-visible{outline:3px solid var(--cream,#f7ede2);outline-offset:5px}.ds-btn-inverse svg{width:20px;height:20px;fill:currentColor;flex-shrink:0}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "description": "Tautan sekunder bergaya editorial — garis bawah currentColor, hover terracotta, ikon panah mengikut.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Kenali Enten <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:14px;font:400 13px/1.5 var(--sans, 'DM Sans', Arial, sans-serif);color:var(--ink,#302d25);border:0;border-bottom:1px solid currentColor;padding:5px 0;background:none;cursor:pointer;text-decoration:none;transition:color .2s}.ds-text-link:hover{color:var(--terracotta,#b06d44)}.ds-text-link:focus-visible{outline:3px solid var(--terracotta,#b06d44);outline-offset:5px}.ds-text-link svg{width:20px;height:20px;fill:currentColor;flex-shrink:0}"
+    },
+    {
+      "name": "Mitra Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Label tipe mitra — pill berborder garis rambut, teks muted, tanpa latar berwarna.",
+      "html": "<ul class=\"ds-chips\"><li>Koperasi kantor kementerian</li><li>Rumah sakit</li><li>Mini swalayan</li><li>Kantin</li></ul>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}.ds-chips li{border:1px solid var(--line,#d7c9b9);border-radius:30px;padding:7px 14px;font:400 11px/1.65 var(--sans, 'DM Sans', Arial, sans-serif);color:var(--muted,#6b6257)}"
+    },
+    {
+      "name": "Order Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Field formulir pemesanan di atas panel krem tua — border 1px, radius 3px, fokus terracotta.",
+      "html": "<div class=\"ds-field\"><label>Nama <span>(opsional)</span><input type=\"text\" placeholder=\"Nama kamu\" /></label><label>Kota tujuan<input type=\"text\" placeholder=\"Kota Bekasi\" /></label></div>",
+      "css": ".ds-field{background:#eee2d4;padding:24px;border-radius:4px;display:grid;gap:14px}.ds-field label{display:block;font:500 12px/1.65 var(--sans, 'DM Sans', Arial, sans-serif);color:var(--ink,#302d25)}.ds-field label>span{font-weight:400;color:var(--muted,#6b6257)}.ds-field input{width:100%;border:1px solid #bbac9a;border-radius:3px;background:var(--cream,#f7ede2);color:var(--ink,#302d25);padding:12px 14px;margin-top:7px;font:400 13px/1.5 var(--sans, 'DM Sans', Arial, sans-serif)}.ds-field input:focus-visible{outline:3px solid var(--terracotta,#b06d44);outline-offset:5px}"
+    },
+    {
+      "name": "Footer Contact Pill",
+      "kind": "custom",
+      "description": "Kontak footer — pill berborder dengan ikon burgundy; hover hanya mengubah warna border.",
+      "html": "<a class=\"ds-contact-pill\" href=\"#\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z\"/></svg> 0877-8243-7781</a>",
+      "css": ".ds-contact-pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line,#d7c9b9);border-radius:40px;padding:10px 18px;font:400 12px/1.65 var(--sans, 'DM Sans', Arial, sans-serif);color:var(--ink,#302d25);text-decoration:none;transition:border-color .2s}.ds-contact-pill:hover{border-color:var(--burgundy,#6a3537)}.ds-contact-pill:focus-visible{outline:3px solid var(--terracotta,#b06d44);outline-offset:5px}.ds-contact-pill svg{width:17px;height:17px;fill:var(--burgundy,#6a3537);flex-shrink:0}"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "nav",
+      "description": "Wordmark tipografis dua baris header — serif ber-tracking lebar di atas sub-label sans kecil.",
+      "html": "<a class=\"ds-wordmark\" href=\"#\">SABRANG MALSICO<span>PERUSAHAAN MINUMAN HERBAL</span></a>",
+      "css": ".ds-wordmark{display:inline-flex;flex-direction:column;gap:9px;font:500 20px/1 var(--serif, 'Cormorant Garamond', Georgia, serif);letter-spacing:.18em;color:var(--ink,#302d25);text-decoration:none}.ds-wordmark span{font:500 6.5px/1 var(--sans, 'DM Sans', Arial, sans-serif);letter-spacing:.24em;text-align:center}.ds-wordmark:focus-visible{outline:3px solid var(--terracotta,#b06d44);outline-offset:5px}"
+    },
+    {
+      "name": "Product Card (collapsed)",
+      "kind": "custom",
+      "description": "Signature: kartu racikan ringkas — pastel per varian, nomor serif, judul vertikal, simbol + lingkaran. Melebar ke flex 4.9 saat diklik (.65s cubic-bezier(.22,.68,0,1)).",
+      "html": "<article class=\"ds-product-card\" style=\"--card-color:#ead6ab\"><span class=\"ds-num\">01</span><span class=\"ds-plus\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z\"/></svg></span><span class=\"ds-photo\"></span><span class=\"ds-vtitle\">Kunyit Asem</span></article>",
+      "css": ".ds-product-card{position:relative;width:110px;height:360px;background:var(--card-color,#ead6ab);border-radius:13px;overflow:hidden}.ds-product-card .ds-num{position:absolute;top:20px;left:18px;font:400 24px/1 var(--serif, 'Cormorant Garamond', Georgia, serif);color:#625a4e;font-variant-numeric:tabular-nums}.ds-product-card .ds-plus{position:absolute;right:14px;top:19px;width:30px;height:30px;display:grid;place-items:center;background:#4b42393b;border-radius:50%;color:var(--ink,#302d25)}.ds-product-card .ds-plus svg{width:16px;height:16px;fill:currentColor}.ds-product-card .ds-photo{position:absolute;top:70px;left:12%;width:76%;height:130px;background:#4b423924;border-radius:5px}.ds-product-card .ds-vtitle{position:absolute;left:50%;bottom:27px;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;font:500 31px/1 var(--serif, 'Cormorant Garamond', Georgia, serif);letter-spacing:-.045em;white-space:nowrap;color:var(--ink,#302d25)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ruang Warisan (The Heritage Parlour)",
+    "overview": "Sistem visual ini adalah ruang tamu sebuah rumah warisan yang terawat: dindingnya kertas krim hangat, kusen-kusennya garis rambut setipis jahitan, dan perabotnya sedikit tetapi setiap pieces-nya berkarakter. Judul serif besar berbicara pelan dengan tracking rapat; label sans-serif kecil bekerja rapi di tepi. Tidak ada yang berteriak. Ketenangan adalah kemewahannya — suasana tenang, hangat, berkelas, dan berakar pada tradisi jamu, disajikan dengan ketelitian editorial modern.\n\nKedalaman di sistem ini datang dari warna, bukan bayangan. Halaman-halaman terang berdiri di atas krim; pengunjung sesekali melangkah ke \"ruang gelap\" yang disengaja — hero olive tempat ilustrasi rempah hidup, dan band burgundy untuk penutup serta kontak. Kartu produk memakai pastel yang diturunkan dari karakter tiap racikan, seperti deretan stoples rempah di rak kayu. Semua permukaan datar; satu-satunya bayangan milik dropdown menu mobile.\n\nGerak dipakai hemat dan selalu punya alasan: kartu produk melebar dengan satu kurva ease yang percaya diri (.65s cubic-bezier(.22,.68,0,1)), detail memudar naik, tombol terangkat dua piksel. Zoom hero terhubung ke guliran dan selalu bisa dimatikan — prefers-reduced-motion mematikan seluruh animasi tanpa kecuali.",
+    "keyCharacteristics": [
+      "Kanvas krim hangat dengan \"ruang gelap\" olive dan burgundy yang disengaja.",
+      "Dua suara tipografis: serif Cormorant Garamond yang berbicara, sans DM Sans yang bekerja.",
+      "Flat by default — kedalaman dari garis rambut 1px dan lapisan tonal, bukan shadow.",
+      "Dua bahasa bentuk: pill penuh untuk aksi, radius kecil tertahan (3–13px) untuk permukaan konten.",
+      "Pastel varian per racikan sebagai identitas kartu produk.",
+      "Gerak lambat dan yakin; selalu menghormati reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "Aturan Ruang Terang",
+        "body": "Krim adalah kanvas default setiap halaman. Latar gelap hanya hadir sebagai \"ruang\" penuh yang disengaja — hero olive, closing dan kontak burgundy — tidak pernah sebagai kartu atau panel yang mengambang di atas krim.",
+        "section": "colors"
+      },
+      {
+        "name": "Aturan Burgundy Aksi",
+        "body": "Burgundy hanya untuk aksi dan momen penutup: tombol utama, teks visi, dan band kontak. Ia tidak pernah menjadi latar section konten biasa; kelangkaannya yang membuatnya berarti.",
+        "section": "colors"
+      },
+      {
+        "name": "Aturan Dua Suara",
+        "body": "Tepat dua keluarga font — serif berbicara (semua heading, wordmark, nomor urut dekoratif), sans bekerja (semua yang lain). Keluarga ketiga tidak pernah masuk, termasuk untuk aksen.",
+        "section": "typography"
+      },
+      {
+        "name": "Aturan Tarikan Berlawanan",
+        "body": "Serif display selalu ditarik rapat (tracking negatif -.045em, line-height ≤1.05); label sans uppercase selalu didorong lebar (tracking .12–.37em). Keduanya tidak pernah ditukar: serif tidak pernah uppercase ber-tracking lebar, sans tidak pernah dipakai untuk headline besar.",
+        "section": "typography"
+      },
+      {
+        "name": "Aturan Angka Serif",
+        "body": "Nomor urut (kartu produk 01–06, langkah sejarah) memakai serif dengan font-variant-numeric: tabular-nums — angka diperlakukan sebagai elemen editorial, bukan data.",
+        "section": "typography"
+      },
+      {
+        "name": "Aturan Datar Bawaan",
+        "body": "Permukaan datar saat diam. Bayangan hanya boleh ada sebagai bayangan sistem tunggal milik dropdown navigasi mobile; elemen baru tidak boleh menambahkan shadow sendiri — gunakan garis rambut, lapisan tonal, atau lift hover.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do pertahankan krim sebagai kanvas di setiap halaman; masuk ke ruang gelap (olive/burgundy) hanya sebagai band penuh yang disengaja.",
+      "Do gunakan satu gaya CTA: pill burgundy dengan ikon panah; di atas band gelap balikkan menjadi pill krim.",
+      "Do jaga disiplin dua keluarga font, dan set angka dekoratif dalam serif tabular.",
+      "Do jaga lantai keterbacaan: teks informatif \u226512px, meta \u226511px; ukuran di bawahnya hanya untuk elemen dekoratif brand yang terdokumentasi (sub-wordmark, footnote hero, scroll-hint).",
+      "Do pisahkan dengan garis rambut 1px --line dan ruang lapang (ritme section 64px, gutter 5vw) — bukan shadow atau pembatas tebal.",
+      "Do beri setiap kontrol interaktif outline fokus 3px terracotta offset 5px (krim di atas latar gelap).",
+      "Do hormati prefers-reduced-motion tanpa syarat: semua transisi, animasi, dan zoom hero mati; sediakan tombol toggle gerak untuk hero.",
+      "Do tetapkan width/height eksplisit pada gambar dan gunakan object-fit cover agar tidak ada distorsi atau layout shift.",
+      "Do pertahankan pastel varian per racikan apa adanya — warna kartu adalah identitas tiap produk."
+    ],
+    "donts": [
+      "Don't tambahkan box-shadow berat, tumpukan kartu bergaya deck, atau widget dashboard (penolakan terkonfirmasi owner).",
+      "Don't beri nuansa obat/farmasi — tidak ada palang, biru klinis, atau isyarat klaim kesehatan; ini merek minuman warisan.",
+      "Don't gunakan foto hutan atau lanskap alam sebagai latar hero (penolakan terkonfirmasi; hero adalah ilustrasi rempah statis).",
+      "Don't menambahkan keluarga font ketiga atau mengganti headline serif dengan sans generik.",
+      "Don't gunakan gradient, glassmorphism, atau isyarat template SaaS generik (ungu neon, kartu mengambang ber-shadow besar).",
+      "Don't letakkan ornamen atau ilustrasi di belakang zona teks hero — sisi kiri tetap bersih.",
+      "Don't membuat logo grafis sendiri; wordmark tetap tipografis (SABRANG MALSICO) sampai logo vektor resmi tersedia."
+    ]
+  }
+}
