@@ -1,0 +1,67 @@
+---
+import { about, vision, mission, licensing } from '../../data/profile';
+---
+<section id="profil" data-header-theme="light" class="relative bg-cream-100 py-24 md:py-36">
+  <div class="mx-auto grid max-w-[86rem] gap-14 px-5 md:grid-cols-12 md:gap-10 md:px-10">
+    <!-- Kolom kiri: judul section sticky -->
+    <div class="md:col-span-4">
+      <div class="md:sticky md:top-28" data-reveal-group>
+        <p class="eyebrow text-turmeric-600" data-reveal>Tentang Kami</p>
+        <h2 class="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.05] font-medium text-forest-900" data-reveal>
+          Rumah kecil di Bekasi untuk racikan yang besar artinya.
+        </h2>
+        <hr class="rule-lux mt-8" data-reveal />
+        <img
+          src="/images/enten-logo-forest.png"
+          alt="Logo ENTEN Herbal Drink"
+          width="428"
+          height="593"
+          class="mt-10 h-28 w-auto opacity-90"
+          data-reveal
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Kolom kanan: profil + visi misi -->
+    <div class="md:col-span-8 md:pl-6">
+      <div data-reveal-group class="space-y-6">
+        <p class="font-display text-[clamp(1.35rem,2.4vw,1.9rem)] leading-snug text-forest-800 italic" data-reveal>
+          {about.lead}
+        </p>
+        <p class="max-w-2xl text-base leading-[1.85] text-ink-700" data-reveal>
+          {about.paragraphs[0]}
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-10 md:grid-cols-2" data-reveal-group>
+        <article class="rounded-[1.4rem] border border-forest-900/10 bg-cream-50 p-8" data-reveal>
+          <p class="text-[0.7rem] font-semibold tracking-[0.3em] text-turmeric-600 uppercase">Visi Perusahaan</p>
+          <p class="mt-5 font-display text-2xl leading-snug text-forest-900 italic">“{vision.quote}”</p>
+        </article>
+        <article class="rounded-[1.4rem] border border-forest-900/10 bg-turmeric-600 p-8 text-cream-100" data-reveal>
+          <p class="text-[0.7rem] font-semibold tracking-[0.3em] text-turmeric-300 uppercase">Misi Perusahaan</p>
+          <p class="mt-5 font-display text-2xl leading-snug italic">“{mission.quote}”</p>
+        </article>
+      </div>
+
+      <!-- Perizinan: fakta dari company profile -->
+      <div class="mt-14" data-reveal-group>
+        <p class="eyebrow text-turmeric-600" data-reveal>Perizinan Usaha</p>
+        <ul class="mt-6 grid gap-4 sm:grid-cols-3">
+          {licensing.map((l) => (
+            <li class="border-t border-forest-900/15 pt-4" data-reveal>
+              <p class="flex items-center gap-2 font-medium text-forest-900">
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="m2.5 8.5 3.5 3.5 7.5-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="text-turmeric-500" />
+                </svg>
+                {l.title}
+              </p>
+              <p class="mt-1.5 text-[0.82rem] leading-relaxed text-ink-500">{l.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

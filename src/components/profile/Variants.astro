@@ -1,0 +1,166 @@
+---
+import { variants, variantMeta, tagline, createWhatsAppUrl } from '../../data/profile';
+---
+<section
+  id="racikan"
+  data-header-theme="dark"
+  class="variants-pin relative overflow-hidden bg-forest-950 py-24 text-cream-100 md:py-32"
+>
+  <!-- Lapisan warna ambient: satu per varian, crossfade via opacity -->
+  <div class="absolute inset-0" aria-hidden="true">
+    {variants.map((v, i) => (
+      <div
+        class="ambient-layer"
+        style={`background: radial-gradient(115% 90% at 72% 12%, ${v.ambient} 0%, rgba(36,33,26,0) 62%), radial-gradient(80% 70% at 12% 92%, ${v.ambient}66 0%, rgba(36,33,26,0) 58%);${i === 0 ? ' opacity: 1;' : ''}`}
+      ></div>
+    ))}
+  </div>
+  <div class="grain pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-[86rem] px-5 md:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow text-turmeric-300">Enam Racikan Enten</p>
+        <h2 class="mt-5 font-display text-[clamp(2.1rem,4.2vw,3.4rem)] leading-[1.05] font-medium">
+          Warisan rasa, <span class="text-turmeric-300 italic">teman keseharian.</span>
+        </h2>
+      </div>
+      <div class="flex items-center gap-5">
+        <span class="flex items-baseline gap-2" aria-hidden="true">
+          <span class="variants-progress-label font-display text-4xl italic">01</span>
+          <span class="font-display text-xl text-cream-100/40 italic">/ 0{variants.length}</span>
+        </span>
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            class="carousel-prev flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-cream-100/25 transition-[opacity,transform] duration-300 hover:border-turmeric-300 disabled:cursor-not-allowed disabled:opacity-35"
+            aria-label="Racikan sebelumnya"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M11 3.5 5.5 9l5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="carousel-next flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-cream-100/25 transition-[opacity,transform] duration-300 hover:border-turmeric-300 disabled:cursor-not-allowed disabled:opacity-35"
+            aria-label="Racikan berikutnya"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="m7 3.5 5.5 5.5L7 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel: scroll-snap horizontal, swipe/drag/trackpad, keyboard, tombol & dots -->
+  <div
+    class="variants-viewport mt-10 w-full overflow-x-auto md:mt-14"
+    tabindex="0"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Karousel enam racikan Enten; gunakan tombol panah atau geser untuk menjelajah"
+  >
+    <div class="variants-track">
+      {variants.map((v, i) => (
+        <article
+          class="variant-card variant-slide p-6 md:h-[54vh] md:p-8"
+          data-slide={i}
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`Racikan ${i + 1} dari ${variants.length}: ${v.name}`}
+          style={`background: linear-gradient(165deg, ${v.ambient}e6 0%, rgba(36,33,26,0.82) 78%);`}
+        >
+          <div class="flex items-start justify-between gap-4">
+            <span class="variant-index font-display italic">0{i + 1}</span>
+            <span class="mt-2 text-[0.62rem] font-semibold tracking-[0.3em] uppercase" style={`color: ${v.accent}`}>
+              {tagline}
+            </span>
+          </div>
+          <div class="mt-4 flex flex-1 items-center justify-center">
+            <img
+              src={v.image}
+              alt={`Botol Enten ${v.name}`}
+              width={v.width}
+              height={v.height}
+              class="h-36 w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.35)] md:h-[17vh]"
+              loading="lazy"
+            />
+          </div>
+          <div class="mt-4">
+            <h3 class="font-display text-[1.7rem] leading-tight font-medium">{v.name}</h3>
+            <p class="mt-1.5 text-[0.9rem] leading-relaxed text-cream-100/75 italic">{v.note}</p>
+            <div class="mt-3 flex items-center justify-between border-t border-cream-100/15 pt-3 text-[0.72rem] tracking-[0.14em] uppercase">
+              <span class="text-cream-100/70">{variantMeta.size}</span>
+              <a
+                class="cursor-pointer font-semibold tracking-[0.18em] underline decoration-cream-100/30 underline-offset-4 transition-colors duration-300 hover:decoration-turmeric-300"
+                style={`color: ${v.accent}`}
+                href={createWhatsAppUrl(`Halo Enten, saya ingin memesan varian ${v.name}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pesan varian ini
+              </a>
+            </div>
+            <p class="mt-2 text-[0.66rem] leading-relaxed text-cream-100/50">{variantMeta.storage}</p>
+          </div>
+        </article>
+      ))}
+
+      <!-- Slide penutup: CTA pemesanan -->
+      <article
+        class="variant-card variant-slide justify-center p-7 md:h-[54vh] md:p-9"
+        role="group"
+        aria-roledescription="slide"
+        aria-label="Penutup: pesan racikan Enten"
+        style="background: linear-gradient(160deg, rgb(202 152 79 / 0.3) 0%, rgba(36,33,26,0.85) 72%);"
+      >
+        <p class="eyebrow text-turmeric-300">{tagline}</p>
+        <h3 class="mt-6 font-display text-[clamp(1.9rem,3vw,2.6rem)] leading-tight font-medium">
+          Enam racikan, satu pilihan yang Anda tentukan sendiri.
+        </h3>
+        <p class="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-cream-100/75">
+          Sapa kami untuk memesan racikan favorit Anda, menanyakan ketersediaan,
+          atau menjajaki kemitraan bersama Sabrang Malsico.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            class="btn-lux btn-primary"
+            data-magnetic
+            href={createWhatsAppUrl('Halo Enten, saya ingin memesan racikan Enten.')}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="btn-fill" aria-hidden="true"></span>
+            Pesan via WhatsApp
+          </a>
+          <a class="btn-lux btn-ghost-dark" href="mailto:entencorp@gmail.com">
+            <span class="btn-fill" aria-hidden="true"></span>
+            Kirim Email
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="relative z-10 mx-auto mt-8 w-full max-w-[86rem] px-5 md:mt-10 md:px-10">
+    <div class="flex items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5" aria-label="Pilih racikan">
+        {variants.map((v, i) => (
+          <button
+            type="button"
+            class="variant-dot h-2.5 w-2.5 cursor-pointer rounded-full border border-cream-100/40 transition-[transform,background-color,border-color] duration-300 hover:border-turmeric-300"
+            aria-current={i === 0 ? 'true' : undefined}
+            aria-label={`Ke racikan ${i + 1}: ${v.name}`}
+            data-index={i}
+          ></button>
+        ))}
+      </div>
+      <div class="variants-progress hidden h-px flex-1 bg-cream-100/15 md:block">
+        <span class="block h-px origin-left scale-x-0 bg-turmeric-400"></span>
+      </div>
+      <p class="text-[0.68rem] tracking-[0.24em] text-cream-100/45 uppercase">Geser · panah · klik</p>
+    </div>
+  </div>
+</section>

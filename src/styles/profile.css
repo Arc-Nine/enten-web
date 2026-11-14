@@ -1,0 +1,436 @@
+/* ============================================================
+   ENTEN × Sabrang Malsico — Company Profile
+   Estetika: Modern Botanical Luxury
+   Stack: Tailwind CSS v4 + GSAP (ScrollTrigger) + Lenis
+   ============================================================ */
+@import 'tailwindcss';
+
+@theme {
+  /* --- Palet mengikuti theme referensi enten-web-neon.vercel.app ---
+     olive = permukaan gelap, burgundy/terracotta/mustard = aksen,
+     cream = permukaan terang, ink/muted = teks. */
+  --color-forest-950: #24211a;
+  --color-forest-900: #302d25;
+  --color-forest-800: #3b372c;
+  --color-forest-700: #4a463a;
+  --color-forest-600: #605c48;
+  --color-forest-500: #6f6a54;
+  --color-forest-400: #8a8468;
+  --color-forest-300: #a8a184;
+  --color-forest-200: #c9c2a6;
+  --color-forest-100: #e4ddc4;
+
+  --color-turmeric-700: #50282a;
+  --color-turmeric-600: #6a3537;
+  --color-turmeric-500: #b06d44;
+  --color-turmeric-400: #ca984f;
+  --color-turmeric-300: #dcb571;
+  --color-turmeric-200: #e8cf9f;
+  --color-turmeric-100: #f4e6c8;
+
+  --color-cream-50: #fff9f2;
+  --color-cream-100: #f7ede2;
+  --color-cream-200: #eee2d4;
+  --color-cream-300: #e2d5c3;
+  --color-cream-400: #d7c9b9;
+
+  --color-ink-900: #302d25;
+  --color-ink-700: #4b4239;
+  --color-ink-500: #6b6257;
+
+  /* --- Tipografi: maksimal dua keluarga font --- */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Ritme gerak global --- */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --shadow-lux: 0 24px 60px -28px rgb(36 33 26 / 0.35);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-cream-100 font-sans text-ink-900 antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a,
+  button {
+    touch-action: manipulation;
+  }
+  /* Anchor section tidak tertutup header fixed saat scroll native */
+  section[id] {
+    scroll-margin-top: 76px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--color-turmeric-300);
+    color: var(--color-forest-900);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-turmeric-500);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  /* Di atas section gelap, ring fokus mengikuti cream seperti referensi. */
+  [data-header-theme='dark'] :focus-visible {
+    outline-color: var(--color-cream-100);
+  }
+  img {
+    @apply select-none;
+  }
+}
+
+@layer components {
+  /* ---------- Header glassmorphism adaptif ----------
+     Dua lapisan pseudo-element: crossfade murni via opacity
+     (performa: hanya opacity yang dianimasikan). */
+  .site-glass {
+    @apply fixed inset-x-0 top-0 z-50;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .site-glass::before,
+  .site-glass::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 -z-10 opacity-0;
+    transition: opacity 0.5s var(--ease-lux);
+    backdrop-filter: blur(14px) saturate(1.25);
+    -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  }
+  .site-glass::before {
+    background-color: rgb(247 237 226 / 0.78);
+    border-bottom: 1px solid rgb(48 45 37 / 0.12);
+    box-shadow: 0 10px 34px -22px rgb(36 33 26 / 0.4);
+  }
+  .site-glass::after {
+    background-color: rgb(48 45 37 / 0.66);
+    border-bottom: 1px solid rgb(247 237 226 / 0.14);
+    box-shadow: 0 10px 34px -22px rgb(0 0 0 / 0.5);
+  }
+  .site-glass.is-scrolled:not(.is-over-dark)::before {
+    @apply opacity-100;
+  }
+  .site-glass.is-over-dark.is-scrolled::after {
+    @apply opacity-100;
+  }
+  .site-glass.is-over-dark .nav-link,
+  .site-glass.is-over-dark .brand-text,
+  .site-glass.is-over-dark .menu-toggle {
+    color: var(--color-cream-100);
+  }
+  .site-glass.is-over-dark .nav-link:hover {
+    color: var(--color-turmeric-300);
+  }
+  .menu-toggle {
+    color: var(--color-forest-900);
+  }
+  .brand-text {
+    color: var(--color-forest-900);
+  }
+  /* Logo transparan adaptif: cream di atas hero gelap, forest saat glass terang */
+  .site-glass .logo-forest {
+    opacity: 0;
+  }
+  .site-glass.is-scrolled:not(.is-over-dark) .logo-forest {
+    opacity: 1;
+  }
+  .site-glass.is-scrolled:not(.is-over-dark) .logo-cream {
+    opacity: 0;
+  }
+
+  .nav-link {
+    @apply relative py-2 text-[0.82rem] font-medium tracking-[0.14em] uppercase transition-colors duration-300;
+    color: var(--color-ink-700);
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-turmeric-500 transition-transform duration-400;
+    transition-timing-function: var(--ease-lux);
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    @apply scale-x-100;
+  }
+  .nav-link:hover {
+    color: var(--color-turmeric-600);
+  }
+
+  /* ---------- Tombol ---------- */
+  .btn-lux {
+    @apply relative inline-flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-[0.8rem] font-semibold tracking-[0.16em] uppercase transition-transform duration-300;
+    transition-timing-function: var(--ease-lux);
+    will-change: transform;
+  }
+  .btn-lux:active {
+    transform: scale(0.97);
+  }
+  .btn-lux .btn-fill {
+    @apply absolute inset-0 -z-10 translate-y-full transition-transform duration-500;
+    transition-timing-function: var(--ease-lux);
+  }
+  .btn-lux:hover .btn-fill,
+  .btn-lux:focus-visible .btn-fill {
+    @apply translate-y-0;
+  }
+  .btn-primary {
+    @apply bg-turmeric-600 text-cream-100;
+  }
+  .btn-primary .btn-fill {
+    background: var(--color-turmeric-700);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    color: var(--color-cream-50);
+  }
+  .btn-ghost {
+    @apply border border-ink-900/25 text-turmeric-600;
+  }
+  .btn-ghost .btn-fill {
+    background: var(--color-turmeric-600);
+  }
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    @apply text-cream-100 border-turmeric-600;
+  }
+  .btn-ghost-dark {
+    border: 1px solid rgb(247 237 226 / 0.35);
+    color: var(--color-cream-100);
+  }
+  .btn-ghost-dark .btn-fill {
+    background: var(--color-cream-100);
+  }
+  .btn-ghost-dark:hover,
+  .btn-ghost-dark:focus-visible {
+    color: var(--color-turmeric-600);
+    border-color: var(--color-cream-100);
+  }
+
+  /* ---------- Kinetic masked-text reveal ---------- */
+  .mask-line {
+    @apply block overflow-hidden;
+    /* ruang descender serif agar tidak terpotong mask */
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+  .mask-line > span {
+    @apply block will-change-transform;
+    transform: translateY(115%);
+  }
+  html:not(.motion-ready) .mask-line > span {
+    transform: translateY(0);
+  }
+
+  /* ---------- Reveal generik (scroll) ---------- */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    will-change: transform, opacity;
+  }
+  html:not(.motion-ready) [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---------- Cursor follower ---------- */
+  .cursor-dot,
+  .cursor-ring {
+    @apply pointer-events-none fixed top-0 left-0 z-[90] rounded-full;
+    opacity: 0;
+    will-change: transform;
+  }
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    background: var(--color-turmeric-500);
+  }
+  .cursor-ring {
+    width: 38px;
+    height: 38px;
+    margin: -19px 0 0 -19px;
+    border: 1px solid rgb(176 109 68 / 0.55);
+    transition: width 0.35s var(--ease-lux), height 0.35s var(--ease-lux),
+      margin 0.35s var(--ease-lux), border-color 0.35s linear, opacity 0.3s linear;
+  }
+  .cursor-ring.is-active {
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    border-color: rgb(176 109 68 / 0.9);
+  }
+  @media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+      display: none;
+    }
+  }
+  html.has-cursor .cursor-dot,
+  html.has-cursor .cursor-ring {
+    opacity: 1;
+  }
+
+  /* ---------- Grain / tekstur kertas halus ---------- */
+  .grain::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-[1] opacity-[0.05];
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Eyebrow / label section ---------- */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.72rem] font-semibold tracking-[0.34em] uppercase;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-10 bg-turmeric-500;
+  }
+
+  .rule-lux {
+    @apply h-px w-full border-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(48 45 37 / 0.22) 12%,
+      rgb(48 45 37 / 0.22) 88%,
+      transparent
+    );
+  }
+
+  /* ---------- Marquee tagline ---------- */
+  .marquee-track {
+    @apply flex w-max items-center gap-10 will-change-transform;
+  }
+
+  /* ---------- Carousel varian ---------- */
+  .variants-pin {
+    @apply relative overflow-hidden;
+  }
+  .variants-viewport {
+    --pad-x: 1.25rem;
+    --slide-w: 86vw;
+    --gap: 1.25rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: var(--pad-x);
+    overscroll-behavior-x: contain;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  @media (min-width: 640px) {
+    .variants-viewport {
+      --slide-w: 24rem;
+      --pad-x: 2.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .variants-viewport {
+      --gap: 2.5rem;
+      --slide-w: 26rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .variants-viewport {
+      --slide-w: 30rem;
+    }
+  }
+  .variants-viewport::-webkit-scrollbar {
+    display: none;
+  }
+  .variants-viewport.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .variants-viewport:focus-visible {
+    outline: 2px solid var(--color-turmeric-500);
+    outline-offset: -2px;
+  }
+  .variants-track {
+    @apply flex items-stretch;
+    /* max-content agar padding-right ikut memperluas area scroll. */
+    width: max-content;
+    min-width: 100%;
+    gap: var(--gap);
+    padding-left: var(--pad-x);
+    /* Ruang akhir agar slide terakhir dapat rata-kiri seperti slide pertama. */
+    padding-right: max(var(--pad-x), calc(100vw - 2 * var(--slide-w) - var(--gap)));
+  }
+  .variant-slide {
+    width: var(--slide-w);
+    @apply shrink-0;
+    scroll-snap-align: start;
+  }
+  .variant-card {
+    @apply relative flex flex-col justify-between overflow-hidden rounded-[1.75rem];
+    background: rgb(247 237 226 / 0.08);
+    border: 1px solid rgb(247 237 226 / 0.16);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .variant-index {
+    @apply font-display text-[3.4rem] leading-none font-medium;
+    color: rgb(247 237 226 / 0.3);
+  }
+  .variant-dot[aria-current='true'] {
+    @apply scale-125 border-turmeric-300 bg-turmeric-400;
+  }
+
+  /* ---------- Ambient color layers ---------- */
+  .ambient-layer {
+    @apply pointer-events-none absolute inset-0 opacity-0;
+    will-change: opacity;
+  }
+
+  /* ---------- Timeline sejarah ---------- */
+  .timeline-line {
+    @apply absolute top-0 bottom-0 left-[7px] w-px md:left-1/2;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgb(48 45 37 / 0.25) 8%,
+      rgb(48 45 37 / 0.25) 92%,
+      transparent
+    );
+  }
+  .timeline-dot {
+    @apply absolute top-2 left-0 h-[15px] w-[15px] rounded-full border-2 border-turmeric-500 bg-cream-100 md:left-1/2 md:-translate-x-1/2;
+  }
+
+  /* ---------- Skip link ---------- */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-forest-800 focus:px-5 focus:py-2.5 focus:text-cream-100;
+  }
+}
+
+/* ---------- Reduced motion: matikan semua gerak non-esensial ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal],
+  .mask-line > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}

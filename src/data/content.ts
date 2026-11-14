@@ -1,16 +1,18 @@
 export interface Product {
-  id: string; name: string; note: string; description: string; color: string; image: string;
+  id: string; name: string; note: string; description: string; color: string; image: string; width: number; height: number;
 }
-// Flavor descriptions are proposed copy, not verified product specifications.
+// Deskripsi lima varian bersumber dari company profile PDF v2 (hal. 05).
+// Deskripsi Sari Asem tetap copy usulan: varian ditetapkan owner, tidak tercantum di PDF.
 export const products: Product[] = [
-  { id: 'kunyit-asem', name: 'Kunyit Asem', note: 'Segar, dengan sentuhan nostalgia.', description: 'Bayangkan pertemuan rasa asam yang cerah dan karakter kunyit yang khas. Sebuah jeda kecil di tengah hari yang panjang.', color: '#ead6ab', image: '/images/kunyit-asem.webp' },
-  { id: 'beras-kencur', name: 'Beras Kencur', note: 'Rasa akrab. Momen yang dekat.', description: 'Karakter lembut dengan aroma kencur yang mengingatkan pada rumah. Untuk menemani percakapan dan waktu senggangmu.', color: '#e7d4cc', image: '/images/beras-kencur.webp' },
-  { id: 'pokak-jahe', name: 'Pokak Jahe', note: 'Hangat dalam setiap cerita.', description: 'Karakter jahe yang tegas, untuk kamu yang menyukai rasa rempah. Teman menikmati sore tanpa perlu terburu-buru.', color: '#d9ddca', image: '/images/pokak-jahe.webp' },
-  { id: 'mpon-mpon', name: 'Mpon Mpon', note: 'Kaya rempah, dekat dengan tradisi.', description: 'Sebuah ajakan berkenalan lagi dengan ragam rasa rimpang Nusantara. Berkarakter dan penuh cerita.', color: '#e6d7c5', image: '/images/mpon-mpon.webp' },
-  { id: 'lemon-jahe', name: 'Lemon Jahe', note: 'Cerahnya lemon, khasnya jahe.', description: 'Perpaduan kesan citrus yang cerah dan karakter jahe. Pilihan untuk memberi warna berbeda pada ritual harianmu.', color: '#d7e2dc', image: '/images/lemon-jahe.webp' },
+  { id: 'kunyit-asem', name: 'Kunyit Asem', note: 'Segar, dengan sentuhan nostalgia.', description: 'Perpaduan kunyit, Asem Jawa dan Rempah menghasilkan cita rasa yang khas dan menyegarkan untuk menemani segala aktivitas.', color: '#ead6ab', image: '/images/kunyit-asem.webp', width: 1120, height: 1400 },
+  { id: 'beras-kencur', name: 'Beras Kencur', note: 'Rasa akrab. Momen yang dekat.', description: 'Racikan Beras Kencur menghadirkan sensasi unik, lembut dan gurih di tiap tegukannya.', color: '#e7d4cc', image: '/images/beras-kencur.webp', width: 1120, height: 1400 },
+  { id: 'pokak-jahe', name: 'Pokak Jahe', note: 'Hangat dalam setiap cerita.', description: 'Perpaduan Jahe dan Rempah-rempah pilihan menghasilkan cita rasa hangat dengan aroma yang menggugah selera.', color: '#d9ddca', image: '/images/pokak-jahe.webp', width: 1120, height: 1400 },
+  { id: 'mpon-mpon', name: 'Mpon Mpon', note: 'Kaya rempah, dekat dengan tradisi.', description: 'Kombinasi Rempah dengan berbagai rimpang seperti Temulawak, Kunyit, Jahe dan kencur menyajikan cita rasa herbal Nusantara.', color: '#e6d7c5', image: '/images/mpon-mpon.webp', width: 1120, height: 1400 },
+  { id: 'lemon-jahe', name: 'Lemon Jahe', note: 'Cerahnya lemon, khasnya jahe.', description: 'Segarnya Lemon dan hangatnya Jahe bertemu wangi Sereh, menggugah selera untuk menjadi teman di semua aktivitas.', color: '#d7e2dc', image: '/images/lemon-jahe.webp', width: 1120, height: 1400 },
+  { id: 'sari-asem', name: 'Sari Asem', note: 'Asam jawa yang jernih dan ringan.', description: 'Kesan asam jawa yang jernih, ringan, dan menyegarkan. Ditetapkan owner sebagai varian unggulan keenam; tampil pada foto produk resmi.', color: '#e9c9a8', image: '/images/sari-asem.webp', width: 800, height: 1201 },
 ];
 export const faqs = [
-  ['Apa saja pilihan racikan Enten?', 'Ada lima pilihan: Kunyit Asem, Beras Kencur, Pokak Jahe, Mpon Mpon, dan Lemon Jahe. Buka kartu racikan untuk menjelajahi masing-masing varian.'],
+  ['Apa saja pilihan racikan Enten?', 'Ada enam pilihan: Kunyit Asem, Beras Kencur, Pokak Jahe, Mpon Mpon, Lemon Jahe, dan Sari Asem. Buka kartu racikan untuk menjelajahi masing-masing varian.'],
   ['Bagaimana cara memesan?', 'Pilih racikan, tentukan jumlah, lalu siapkan pesan melalui formulir di atas. Klik Lanjut ke WhatsApp untuk membuka percakapan dengan Enten. Periksa pesan lalu kirim sendiri di WhatsApp. Harga, stok, dan pengiriman dikonfirmasi bersama tim Enten.'],
   ['Berapa harga dan ukuran botolnya?', 'Harga dan ukuran resmi sedang menunggu konfirmasi tim Enten. Angka pada gambar botol AI bukan acuan pembelian. Tanyakan daftar produk terbaru sebelum memesan.'],
   ['Bagaimana penyimpanan dan masa simpannya?', 'Ikuti petunjuk pada kemasan asli dan konfirmasikan kepada tim Enten. Kami belum menampilkan suhu penyimpanan atau masa simpan karena informasinya perlu diverifikasi.'],
@@ -28,8 +30,8 @@ export function createOrderMessage(name: string, quantity: number, city: string)
   return `Halo Enten, saya ingin menanyakan pesanan:\nRacikan: ${name}\nJumlah: ${quantity} botol\nKota tujuan: ${city.trim() || 'Belum diisi'}\nMohon info harga, ukuran, ketersediaan, ongkir, dan cara pembayaran. Terima kasih.`;
 }
 
-// Business contact explicitly supplied by the owner.
-export const whatsappNumber = '62aaaaa';
+// Business contact explicitly supplied by the owner (company profile PDF, halaman Kontak).
+export const whatsappNumber = '6287782437781';
 export function createWhatsAppUrl(message: string): string {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

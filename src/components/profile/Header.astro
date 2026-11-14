@@ -1,0 +1,65 @@
+---
+import { navLinks, createWhatsAppUrl } from '../../data/profile';
+const waUrl = createWhatsAppUrl(
+  'Halo Enten, saya ingin mengenal racikan Enten dan peluang kemitraan Sabrang Malsico.',
+);
+---
+<a class="skip-link" href="#main">Lewati ke konten</a>
+<header class="site-glass">
+  <div class="mx-auto flex max-w-[86rem] items-center justify-between gap-6 px-5 py-3.5 md:px-10">
+    <a href="#beranda" class="brand group flex items-center gap-3" aria-label="ENTEN Herbal Drink — kembali ke atas">
+      <span class="relative block h-11 w-9 md:h-12 md:w-10">
+        <img
+          src="/images/enten-logo-cream.png"
+          alt=""
+          width="428"
+          height="593"
+          class="logo-cream absolute inset-0 h-full w-full object-contain transition-opacity duration-500"
+        />
+        <img
+          src="/images/enten-logo-forest.png"
+          alt=""
+          width="428"
+          height="593"
+          class="logo-forest absolute inset-0 h-full w-full object-contain transition-opacity duration-500"
+        />
+      </span>
+      <span class="brand-text leading-none font-medium tracking-[0.3em] uppercase transition-colors duration-500" translate="no">
+        <span class="block text-[0.95rem]">Enten</span>
+        <span class="mt-1 block text-[0.55rem] tracking-[0.42em] opacity-70">Herbal Drink</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Navigasi utama">
+      {navLinks.map((l) => <a class="nav-link" href={l.href}>{l.label}</a>)}
+      <a class="btn-lux btn-primary" data-magnetic href={waUrl} target="_blank" rel="noopener noreferrer">
+        <span class="btn-fill" aria-hidden="true"></span>
+        Pesan Sekarang
+      </a>
+    </nav>
+
+    <button
+      class="menu-toggle flex cursor-pointer flex-col items-end gap-1.5 p-2 lg:hidden"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Buka menu navigasi"
+    >
+      <span class="block h-px w-7 bg-current"></span>
+      <span class="block h-px w-5 bg-current"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu hidden border-t border-forest-900/10 bg-cream-50/95 backdrop-blur-xl lg:hidden">
+    <nav class="mx-auto flex max-w-[86rem] flex-col px-5 py-4" aria-label="Navigasi mobile">
+      {navLinks.map((l) => (
+        <a class="border-b border-forest-900/8 py-3.5 text-sm font-medium tracking-[0.18em] text-forest-900 uppercase" href={l.href}>
+          {l.label}
+        </a>
+      ))}
+      <a class="btn-lux btn-primary mt-4 mb-2 self-start" href={waUrl} target="_blank" rel="noopener noreferrer">
+        <span class="btn-fill" aria-hidden="true"></span>
+        Pesan Sekarang
+      </a>
+    </nav>
+  </div>
+</header>

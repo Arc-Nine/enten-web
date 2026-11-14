@@ -1,0 +1,17 @@
+---
+import { tagline } from '../../data/profile';
+const items = ['Sabrang Malsico', 'Enten Herbal Drink', tagline, 'Minuman Herbal Tradisional'];
+const loop = [...items, ...items, ...items, ...items];
+---
+<div class="relative overflow-hidden border-y border-forest-900/10 bg-turmeric-400 py-4" aria-hidden="true">
+  <div class="marquee-track">
+    {loop.map((t) => (
+      <span class="flex items-center gap-10 font-display text-[1.05rem] tracking-[0.12em] text-forest-950 italic whitespace-nowrap uppercase">
+        {t}
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="text-forest-950/60">
+          <path d="M6 0.8c1 2.6 2.6 4.2 5.2 5.2C8.6 7 7 8.6 6 11.2 5 8.6 3.4 7 0.8 6 3.4 5 5 3.4 6 0.8Z" fill="currentColor" />
+        </svg>
+      </span>
+    ))}
+  </div>
+</div>

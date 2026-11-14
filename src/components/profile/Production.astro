@@ -1,0 +1,68 @@
+---
+import { production, events, specialPackaging } from '../../data/profile';
+---
+<section id="produksi" data-header-theme="light" class="relative bg-cream-100 py-24 md:py-36">
+  <div class="mx-auto max-w-[86rem] px-5 md:px-10">
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-reveal-group>
+      <div>
+        <p class="eyebrow text-turmeric-600" data-reveal>Produksi & Kegiatan</p>
+        <h2 class="mt-6 max-w-2xl font-display text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.05] font-medium text-forest-900" data-reveal>
+          Dapur produksi yang rapi, <span class="italic">panggung yang ramai.</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{production.text}</p>
+    </div>
+
+    <!-- Produksi -->
+    <figure class="mt-14 overflow-hidden rounded-[1.6rem]" data-reveal>
+      <img
+        src={production.image}
+        alt={production.imageAlt}
+        width="1376"
+        height="768"
+        class="h-[42vh] w-full object-cover transition-transform duration-[1.6s] [transition-timing-function:var(--ease-lux)] hover:scale-[1.03] md:h-[62vh]"
+        loading="lazy"
+      />
+    </figure>
+
+    <!-- Kegiatan: bazar & pameran + kemasan khusus -->
+    <div class="mt-20 grid gap-10 lg:grid-cols-12">
+      <article class="lg:col-span-7" data-reveal-group>
+        <p class="eyebrow text-turmeric-600" data-reveal>Event yang Pernah Diikuti</p>
+        <p class="mt-6 max-w-xl text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{events.text}</p>
+        <ul class="mt-6 flex flex-wrap gap-3" data-reveal-group>
+          {events.captions.map((c) => (
+            <li class="rounded-full border border-forest-900/15 px-4 py-2 text-[0.78rem] tracking-[0.08em] text-forest-800" data-reveal>
+              {c}
+            </li>
+          ))}
+        </ul>
+        <figure class="mt-8 overflow-hidden rounded-[1.4rem]" data-reveal>
+          <img
+            src={events.image}
+            alt={events.imageAlt}
+            width="1080"
+            height="1080"
+            class="h-[46vh] w-full object-cover md:h-[54vh]"
+            loading="lazy"
+          />
+        </figure>
+      </article>
+
+      <article class="lg:col-span-5" data-reveal-group>
+        <p class="eyebrow text-turmeric-600" data-reveal>Event Event Khusus</p>
+        <p class="mt-6 text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{specialPackaging.text}</p>
+        <figure class="mt-8 overflow-hidden rounded-[1.4rem]" data-reveal>
+          <img
+            src={specialPackaging.image}
+            alt={specialPackaging.imageAlt}
+            width="2632"
+            height="3374"
+            class="h-[46vh] w-full object-cover md:h-[54vh]"
+            loading="lazy"
+          />
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,17 +1,63 @@
 ---
+// Beranda — company profile Sabrang Malsico (ENTEN Herbal Drink).
+// 8 section: Hero, Profil+Visi&Misi, Sejarah, Produksi & Kegiatan,
+// Varian Produk (pinned horizontal), Kemitraan & Pengiriman, Kontak, Footer.
 import '@fontsource/cormorant-garamond/400.css';
 import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
 import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/cormorant-garamond/500-italic.css';
 import '@fontsource/dm-sans/400.css';
 import '@fontsource/dm-sans/500.css';
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Story from '../components/Story.astro';
-import Products from '../components/Products.astro';
-import Editorial from '../components/Editorial.astro';
-import Ordering from '../components/Ordering.astro';
-import FAQ from '../components/FAQ.astro';
-import Footer from '../components/Footer.astro';
+import '@fontsource/dm-sans/700.css';
+import '../styles/profile.css';
+import Header from '../components/profile/Header.astro';
+import Hero from '../components/profile/Hero.astro';
+import Marquee from '../components/profile/Marquee.astro';
+import About from '../components/profile/About.astro';
+import History from '../components/profile/History.astro';
+import Production from '../components/profile/Production.astro';
+import Variants from '../components/profile/Variants.astro';
+import Partnership from '../components/profile/Partnership.astro';
+import Contact from '../components/profile/Contact.astro';
+import Footer from '../components/profile/Footer.astro';
 ---
-<!doctype html><html lang="id"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Enten — Warisan rasa. Teman keseharian.</title><meta name="description" content="Kenali lima racikan jamu tradisional Enten. Warisan rasa, untuk menemani keseharian. Preview konsep website." /><meta name="robots" content="noindex, nofollow" /><meta name="theme-color" content="#f7ede2" /></head><body><Header /><main id="main"><Hero /><Story /><Products /><Editorial /><Ordering /><FAQ /><Footer /></main><script>import '../scripts/site';</script></body></html>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sabrang Malsico — ENTEN Herbal Drink | Company Profile</title>
+    <meta
+      name="description"
+      content="Company profile Sabrang Malsico, perusahaan minuman herbal tradisional dari Kota Bekasi dengan merek ENTEN. Kenali profil, sejarah, produksi, enam racikan, kemitraan, dan kontak kami."
+    />
+    <meta name="theme-color" content="#605c48" />
+    <link rel="icon" type="image/png" href="/images/enten-logo-turmeric.png" />
+    <script is:inline>
+      // Aktifkan state awal animasi hanya bila gerak diizinkan.
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('motion-ready');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <Header />
+    <main id="main">
+      <Hero />
+      <Marquee />
+      <About />
+      <History />
+      <Production />
+      <Variants />
+      <Partnership />
+      <Contact />
+      <Footer />
+    </main>
+    <script>
+      import '../scripts/profile';
+    </script>
+  </body>
+</html>

@@ -10,3 +10,5 @@ dist/
 /tests/
 /tools/
 /AGENTS.md
+/.qwen/tmp/
+/reference

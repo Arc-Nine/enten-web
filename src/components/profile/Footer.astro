@@ -1,0 +1,35 @@
+---
+import { navLinks, tagline } from '../../data/profile';
+---
+<footer data-header-theme="dark" class="grain relative overflow-hidden bg-forest-950 pt-16 pb-10 text-cream-100">
+  <div class="relative z-10 mx-auto max-w-[86rem] px-5 md:px-10">
+    <div class="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+      <div>
+        <img
+          src="/images/enten-logo-cream.png"
+          alt="Logo ENTEN Herbal Drink"
+          width="428"
+          height="593"
+          class="h-24 w-auto"
+          loading="lazy"
+        />
+        <p class="mt-6 max-w-sm text-sm leading-relaxed text-cream-100/60">
+          Sabrang Malsico — perusahaan minuman herbal tradisional dari Kota Bekasi,
+          dengan merek Enten.
+        </p>
+      </div>
+      <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Navigasi footer">
+        {navLinks.map((l) => (
+          <a class="nav-link !text-cream-100/70 hover:!text-turmeric-300" href={l.href}>{l.label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <hr class="mt-12 border-cream-100/12" />
+
+    <div class="mt-6 flex flex-col gap-3 text-[0.72rem] tracking-[0.18em] text-cream-100/45 uppercase md:flex-row md:items-center md:justify-between">
+      <p>© 2026 Sabrang Malsico · Enten Herbal Drink</p>
+      <p class="font-display text-[0.95rem] tracking-[0.24em] text-turmeric-300/80 normal-case italic">{tagline}</p>
+    </div>
+  </div>
+</footer>
