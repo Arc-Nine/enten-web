@@ -28,7 +28,6 @@ const variantSkin: Record<string, { ambient: string; accent: string }> = {
   'pokak-jahe': { ambient: '#55603c', accent: '#d9ddca' },
   'mpon-mpon': { ambient: '#6a4a2c', accent: '#e6d7c5' },
   'lemon-jahe': { ambient: '#4f6157', accent: '#d7e2dc' },
-  'sari-asem': { ambient: '#7a4a33', accent: '#e9c9a8' },
 };
 
 export const variants: Variant[] = products.map((p) => ({
@@ -101,10 +100,41 @@ export const specialPackaging = {
 export const partnership = {
   text: company.mitra,
   sectors: company.mitraTypes,
-  image: '/images/profile/partner.jpg',
-  imageAlt:
-    'Kolase titik mitra Enten: display botol di Balaikota Prov. DKI Jakarta, Masjid Fatahillah Balikota, RS. Hermina Bekasi, toko Omil, dan Apartemen Pancoran Riverside.',
 };
+
+/** Dokumentasi titik mitra di lapangan; stiker lokasi melekat pada foto. */
+export const partnerSpots = [
+  {
+    image: '/images/profile/mitra-balai-kota.webp',
+    width: 720,
+    height: 1280,
+    alt: 'Gerobak mitra Enten terparkir di depan Masjid Fatahillah Balaikota, Kantor Balai Kota DKI Jakarta.',
+  },
+  {
+    image: '/images/profile/mitra-bank-indonesia.webp',
+    width: 926,
+    height: 1279,
+    alt: 'Gerobak mitra Enten di area parkir motor Kantor Bank Indonesia.',
+  },
+  {
+    image: '/images/profile/mitra-graha-pertamina.webp',
+    width: 720,
+    height: 1280,
+    alt: 'Gerobak mitra Enten di depan signage Graha Pertamina.',
+  },
+  {
+    image: '/images/profile/mitra-kominfo.webp',
+    width: 720,
+    height: 1280,
+    alt: 'Kurir Enten berompi di samping gerobak, di depan Kantor Kementerian Kominfo.',
+  },
+  {
+    image: '/images/profile/mitra-koperasi-tribuana.webp',
+    width: 780,
+    height: 1281,
+    alt: 'Gerobak mitra Enten di depan gedung Primer Koperasi Tribuana III.',
+  },
+];
 
 export const delivery = {
   text: company.pengiriman,

@@ -20,7 +20,7 @@ import { variants, variantMeta, tagline, createWhatsAppUrl } from '../../data/pr
   <div class="relative z-10 mx-auto w-full max-w-[86rem] px-5 md:px-10">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p class="eyebrow text-turmeric-300">Enam Racikan Enten</p>
+        <p class="eyebrow text-turmeric-300">Lima Racikan Enten</p>
         <h2 class="mt-5 font-display text-[clamp(2.1rem,4.2vw,3.4rem)] leading-[1.05] font-medium">
           Warisan rasa, <span class="text-turmeric-300 italic">teman keseharian.</span>
         </h2>
@@ -60,57 +60,63 @@ import { variants, variantMeta, tagline, createWhatsAppUrl } from '../../data/pr
     tabindex="0"
     role="region"
     aria-roledescription="carousel"
-    aria-label="Karousel enam racikan Enten; gunakan tombol panah atau geser untuk menjelajah"
+    aria-label="Karousel lima racikan Enten; gunakan tombol panah atau geser untuk menjelajah"
   >
     <div class="variants-track">
       {variants.map((v, i) => (
         <article
-          class="variant-card variant-slide p-6 md:h-[54vh] md:p-8"
+          class="variant-card variant-slide p-5 md:h-[66vh] md:p-6"
           data-slide={i}
           role="group"
           aria-roledescription="slide"
           aria-label={`Racikan ${i + 1} dari ${variants.length}: ${v.name}`}
           style={`background: linear-gradient(165deg, ${v.ambient}e6 0%, rgba(36,33,26,0.82) 78%);`}
         >
-          <div class="flex items-start justify-between gap-4">
-            <span class="variant-index font-display italic">0{i + 1}</span>
-            <span class="mt-2 text-[0.62rem] font-semibold tracking-[0.3em] uppercase" style={`color: ${v.accent}`}>
-              {tagline}
-            </span>
-          </div>
-          <div class="mt-4 flex flex-1 items-center justify-center">
+          <!-- Panel foto: porsi terbesar kartu agar produk menjadi fokus utama -->
+          <div
+            class="variant-media relative h-72 overflow-hidden rounded-[1.25rem] border border-cream-100/10 md:h-[40vh]"
+            style={`background: radial-gradient(85% 65% at 50% 34%, ${v.accent}30 0%, rgba(24,22,17,0.4) 80%);`}
+          >
             <img
               src={v.image}
               alt={`Botol Enten ${v.name}`}
               width={v.width}
               height={v.height}
-              class="h-36 w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.35)] md:h-[17vh]"
+              class="absolute inset-0 h-full w-full object-contain p-4 drop-shadow-[0_24px_36px_rgba(0,0,0,0.45)]"
               loading="lazy"
             />
           </div>
-          <div class="mt-4">
-            <h3 class="font-display text-[1.7rem] leading-tight font-medium">{v.name}</h3>
-            <p class="mt-1.5 text-[0.9rem] leading-relaxed text-cream-100/75 italic">{v.note}</p>
-            <div class="mt-3 flex items-center justify-between border-t border-cream-100/15 pt-3 text-[0.72rem] tracking-[0.14em] uppercase">
-              <span class="text-cream-100/70">{variantMeta.size}</span>
-              <a
-                class="cursor-pointer font-semibold tracking-[0.18em] underline decoration-cream-100/30 underline-offset-4 transition-colors duration-300 hover:decoration-turmeric-300"
-                style={`color: ${v.accent}`}
-                href={createWhatsAppUrl(`Halo Enten, saya ingin memesan varian ${v.name}.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Pesan varian ini
-              </a>
+          <div class="mt-5 flex min-w-0 flex-1 flex-col md:mt-6">
+            <div class="flex items-start justify-between gap-4">
+              <span class="variant-index font-display text-[2.4rem] italic">0{i + 1}</span>
+              <span class="mt-2 text-[0.62rem] font-semibold tracking-[0.3em] uppercase" style={`color: ${v.accent}`}>
+                {tagline}
+              </span>
             </div>
-            <p class="mt-2 text-[0.66rem] leading-relaxed text-cream-100/50">{variantMeta.storage}</p>
+            <h3 class="mt-3 font-display text-[1.7rem] leading-tight font-medium">{v.name}</h3>
+            <p class="mt-1.5 text-[0.9rem] leading-relaxed text-cream-100/75 italic">{v.note}</p>
+            <div class="mt-auto pt-3">
+              <div class="flex items-center justify-between gap-3 border-t border-cream-100/15 pt-3 text-[0.72rem] tracking-[0.14em] uppercase">
+                <span class="text-cream-100/70">{variantMeta.size}</span>
+                <a
+                  class="cursor-pointer font-semibold tracking-[0.18em] underline decoration-cream-100/30 underline-offset-4 transition-colors duration-300 hover:decoration-turmeric-300"
+                  style={`color: ${v.accent}`}
+                  href={createWhatsAppUrl(`Halo Enten, saya ingin memesan varian ${v.name}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Pesan varian ini
+                </a>
+              </div>
+              <p class="mt-2 text-[0.66rem] leading-relaxed text-cream-100/50">{variantMeta.storage}</p>
+            </div>
           </div>
         </article>
       ))}
 
       <!-- Slide penutup: CTA pemesanan -->
       <article
-        class="variant-card variant-slide justify-center p-7 md:h-[54vh] md:p-9"
+        class="variant-card variant-slide justify-center p-7 md:h-[66vh] md:p-9"
         role="group"
         aria-roledescription="slide"
         aria-label="Penutup: pesan racikan Enten"
@@ -118,7 +124,7 @@ import { variants, variantMeta, tagline, createWhatsAppUrl } from '../../data/pr
       >
         <p class="eyebrow text-turmeric-300">{tagline}</p>
         <h3 class="mt-6 font-display text-[clamp(1.9rem,3vw,2.6rem)] leading-tight font-medium">
-          Enam racikan, satu pilihan yang Anda tentukan sendiri.
+          Lima racikan, satu pilihan yang Anda tentukan sendiri.
         </h3>
         <p class="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-cream-100/75">
           Sapa kami untuk memesan racikan favorit Anda, menanyakan ketersediaan,

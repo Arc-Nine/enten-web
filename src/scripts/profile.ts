@@ -146,7 +146,8 @@ function setAmbient(position: number) {
 
 if (viewport && slides.length) {
   let step = 1;
-  let active = 0;
+  // -1 agar sync() pertama ikut menandai slide awal sebagai is-active.
+  let active = -1;
   const maxScroll = () => Math.max(1, viewport.scrollWidth - viewport.clientWidth);
   const measure = () => {
     step = slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : 1;
@@ -164,6 +165,7 @@ if (viewport && slides.length) {
         if (i === idx) d.setAttribute('aria-current', 'true');
         else d.removeAttribute('aria-current');
       });
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
     }
     if (progressLabel) progressLabel.textContent = String(idx + 1).padStart(2, '0');
     if (prevBtn) prevBtn.disabled = idx === 0;

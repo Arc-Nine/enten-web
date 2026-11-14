@@ -1,12 +1,21 @@
 ---
-import { partnership, delivery } from '../../data/profile';
+import { partnership, partnerSpots, delivery } from '../../data/profile';
+
+const gallery = [
+  ...partnerSpots,
+  { image: delivery.image, width: 2697, height: 3374, alt: delivery.imageAlt },
+];
 ---
+
 <section id="kemitraan" data-header-theme="light" class="relative bg-cream-100 py-24 md:py-36">
   <div class="mx-auto max-w-[86rem] px-5 md:px-10">
     <div class="grid gap-14 lg:grid-cols-12 lg:gap-10">
       <div class="lg:col-span-6" data-reveal-group>
         <p class="eyebrow text-turmeric-600" data-reveal>Mitra Kerjasama</p>
-        <h2 class="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.05] font-medium text-forest-900" data-reveal>
+        <h2
+          class="mt-6 max-w-2xl font-display text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.05] font-medium text-balance text-forest-900"
+          data-reveal
+        >
           Tumbuh bersama, <span class="italic">berputar baik bersama mitra.</span>
         </h2>
         <p class="mt-7 max-w-xl text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{partnership.text}</p>
@@ -17,32 +26,27 @@ import { partnership, delivery } from '../../data/profile';
             </li>
           ))}
         </ul>
-        <figure class="mt-10 overflow-hidden rounded-[1.4rem]" data-reveal>
-          <img
-            src={partnership.image}
-            alt={partnership.imageAlt}
-            width="2971"
-            height="3714"
-            class="h-[44vh] w-full object-cover md:h-[52vh]"
-            loading="lazy"
-          />
-        </figure>
       </div>
 
-      <div class="lg:col-span-5 lg:col-start-8" data-reveal-group>
+      <div class="lg:col-span-5 lg:col-start-8 lg:self-center" data-reveal-group>
         <p class="eyebrow text-turmeric-600" data-reveal>Penanganan & Pengiriman Produk</p>
         <p class="mt-7 text-[0.98rem] leading-[1.85] text-ink-700" data-reveal>{delivery.text}</p>
-        <figure class="mt-8 overflow-hidden rounded-[1.4rem]" data-reveal>
+      </div>
+    </div>
+
+    <div class="mt-16 grid grid-cols-2 gap-3 md:mt-20 md:grid-cols-3 md:gap-4 lg:grid-cols-6" data-reveal-group>
+      {gallery.map((g) => (
+        <figure class="overflow-hidden rounded-[1.4rem] bg-forest-900/5" data-reveal>
           <img
-            src={delivery.image}
-            alt={delivery.imageAlt}
-            width="2697"
-            height="3374"
-            class="h-[44vh] w-full object-cover md:h-[52vh]"
+            src={g.image}
+            alt={g.alt}
+            width={g.width}
+            height={g.height}
+            class="aspect-[3/4] w-full object-cover object-[50%_75%]"
             loading="lazy"
           />
         </figure>
-      </div>
+      ))}
     </div>
   </div>
 </section>
