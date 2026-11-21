@@ -65,7 +65,9 @@ export const contacts = {
 // export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink ❤️\nAda yang bisa kami bantu hari ini kak?';
 export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink \u2764\nAda yang bisa kami bantu hari ini kak?';
 
-export const whatsappUrl = `https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(whatsappGreeting)}`;
+// Gunakan api.whatsapp.com/send, bukan wa.me: redirect wa.me merusak emoji
+// menjadi U+FFFD (). encodeURIComponent tetap dipakai tepat satu kali.
+export const whatsappUrl = `https://api.whatsapp.com/send?phone=${contacts.whatsappNumber}&text=${encodeURIComponent(whatsappGreeting)}`;
 export const mailtoUrl = `mailto:${contacts.email}`;
 export const instagramUrl = `https://instagram.com/${contacts.instagram.replace('@', '')}`;
 export const tiktokUrl = `https://tiktok.com/${contacts.tiktok}`;
