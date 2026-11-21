@@ -62,9 +62,9 @@ export const contacts = {
   location: 'Kota Bekasi',
 };
 
-export const whatsappUrl = `https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(
-  'Halo Enten, saya ingin mengenal racikan Enten dan peluang kemitraan Sabrang Malsico.',
-)}`;
+export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink ❤️\nAda yang bisa kami bantu hari ini kak?';
+
+export const whatsappUrl = `https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(whatsappGreeting)}`;
 export const mailtoUrl = `mailto:${contacts.email}`;
 export const instagramUrl = `https://instagram.com/${contacts.instagram.replace('@', '')}`;
 export const tiktokUrl = `https://tiktok.com/${contacts.tiktok}`;
