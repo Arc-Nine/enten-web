@@ -150,6 +150,7 @@ export const contact = {
     'Angka pada halaman kontak resmi company profile. Foto gerobak menampilkan 0877-8245-7781; menunggu konfirmasi final owner.',
 };
 
+// Langsung ke api.whatsapp.com/send: redirect wa.me merusak emoji (U+FFFD/).
 export function createWhatsAppUrl(message: string): string {
-  return `https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${contacts.whatsappNumber}&text=${encodeURIComponent(message)}`;
 }

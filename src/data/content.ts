@@ -32,6 +32,8 @@ export function createOrderMessage(name: string, quantity: number, city: string)
 
 // Business contact explicitly supplied by the owner (company profile PDF, halaman Kontak).
 export const whatsappNumber = '6287782437781';
+// api.whatsapp.com/send dipakai langsung (bukan wa.me) karena redirect wa.me
+// mengganti emoji dengan U+FFFD () sebelum pesan dibuka di WhatsApp.
 export function createWhatsAppUrl(message: string): string {
-  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
 }
