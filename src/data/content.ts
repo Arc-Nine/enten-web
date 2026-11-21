@@ -6,9 +6,9 @@ export interface Product {
 // Sari Asem tidak lagi ditampilkan.
 export const products: Product[] = [
   { id: 'kunyit-asem', name: 'Kunyit Asem', note: 'Segar, dengan sentuhan nostalgia.', description: 'Perpaduan kunyit, Asem Jawa dan Rempah menghasilkan cita rasa yang khas dan menyegarkan untuk menemani segala aktivitas.', color: '#ead6ab', image: '/images/kunyit-asem.webp', width: 1131, height: 1600 },
-  { id: 'beras-kencur', name: 'Beras Kencur', note: 'Rasa akrab. Momen yang dekat.', description: 'Racikan Beras Kencur menghadirkan sensasi unik, lembut dan gurih di tiap tegukannya.', color: '#e7d4cc', image: '/images/beras-kencur.webp', width: 794, height: 1123 },
-  { id: 'pokak-jahe', name: 'Pokak Jahe', note: 'Hangat dalam setiap cerita.', description: 'Perpaduan Jahe dan Rempah-rempah pilihan menghasilkan cita rasa hangat dengan aroma yang menggugah selera.', color: '#d9ddca', image: '/images/pokak-jahe.webp', width: 1120, height: 1400 },
-  { id: 'mpon-mpon', name: 'Mpon Mpon', note: 'Kaya rempah, dekat dengan tradisi.', description: 'Kombinasi Rempah dengan berbagai rimpang seperti Temulawak, Kunyit, Jahe dan kencur menyajikan cita rasa herbal Nusantara.', color: '#e6d7c5', image: '/images/mpon-mpon.webp', width: 1120, height: 1400 },
+  { id: 'beras-kencur', name: 'Beras Kencur', note: 'Rasa akrab. Momen yang dekat.', description: 'Racikan Beras Kencur menghadirkan sensasi unik, lembut dan gurih di tiap tegukannya.', color: '#e7d4cc', image: '/images/beras-kencur.webp', width: 1066, height: 1600 },
+  { id: 'pokak-jahe', name: 'Pokak Jahe', note: 'Hangat dalam setiap cerita.', description: 'Perpaduan Jahe dan Rempah-rempah pilihan menghasilkan cita rasa hangat dengan aroma yang menggugah selera.', color: '#d9ddca', image: '/images/pokak-jahe.webp', width: 1066, height: 1600 },
+  { id: 'mpon-mpon', name: 'Mpon Mpon', note: 'Kaya rempah, dekat dengan tradisi.', description: 'Kombinasi Rempah dengan berbagai rimpang seperti Temulawak, Kunyit, Jahe dan kencur menyajikan cita rasa herbal Nusantara.', color: '#e6d7c5', image: '/images/mpon-mpon.webp', width: 1066, height: 1600 },
   { id: 'lemon-jahe', name: 'Lemon Jahe', note: 'Cerahnya lemon, khasnya jahe.', description: 'Segarnya Lemon dan hangatnya Jahe bertemu wangi Sereh, menggugah selera untuk menjadi teman di semua aktivitas.', color: '#d7e2dc', image: '/images/lemon-jahe.webp', width: 794, height: 1123 },
 ];
 export const faqs = [
