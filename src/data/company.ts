@@ -62,7 +62,8 @@ export const contacts = {
   location: 'Kota Bekasi',
 };
 
-export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink ❤️\nAda yang bisa kami bantu hari ini kak?';
+// export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink ❤️\nAda yang bisa kami bantu hari ini kak?';
+export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink \u2764\nAda yang bisa kami bantu hari ini kak?';
 
 export const whatsappUrl = `https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(whatsappGreeting)}`;
 export const mailtoUrl = `mailto:${contacts.email}`;
