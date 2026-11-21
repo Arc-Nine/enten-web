@@ -63,7 +63,8 @@ export const contacts = {
 };
 
 // export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink ❤️\nAda yang bisa kami bantu hari ini kak?';
-export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink \u2764\nAda yang bisa kami bantu hari ini kak?';
+// export const whatsappGreeting = 'Selamat Datang di Enten Herbal Drink \u2764\nAda yang bisa kami bantu hari ini kak?';
+export const whatsappGreeting = 'Halo Enten, saya ingin mengenal Enten dan peluang kemitraan Sabrang Malsico.';
 
 // Gunakan api.whatsapp.com/send, bukan wa.me: redirect wa.me merusak emoji
 // menjadi U+FFFD (). encodeURIComponent tetap dipakai tepat satu kali.
